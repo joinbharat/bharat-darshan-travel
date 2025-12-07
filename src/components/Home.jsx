@@ -1,13 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PLACES, TOP_DESTINATIONS } from '../data/places/index';
-import { Link } from 'react-router-dom';
-import { Search, Mountain, Palmtree, Castle, Sparkles, MapPin, Hotel } from 'lucide-react';
-import localHeroBg from '../assets/bharatdarshannimage.jpeg'; // Your local image import
+import { Link, useNavigate } from 'react-router-dom';
+import { Search, Mountain, Palmtree, Castle, Sparkles, MapPin } from 'lucide-react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import localHeroBg from '../assets/bharatdarshannimage.jpeg'; 
 
 export default function Home() {
   const [selectedState, setSelectedState] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [filteredPlaces, setFilteredPlaces] = useState(TOP_DESTINATIONS);
+  
+  // Auth State
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  
+  // Safe Auth Initialization
+  // Moved getAuth() inside useEffect to prevent app crashing (White Screen) if Firebase isn't ready instantly
+  useEffect(() => {
+    try {
+      const auth = getAuth();
+      const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+      });
+      return () => unsubscribe();
+    } catch (error) {
+      console.error("Auth init error:", error);
+    }
+  }, []);
 
   // Extract unique lists
   const allStates = [...new Set(PLACES.map(p => p.state))];
@@ -42,18 +61,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans pb-20 md:pb-0">
       
-      {/* --- HERO SECTION: SPIRITUAL THEME --- */}
+      {/* --- HERO SECTION --- */}
       <div className="relative flex flex-col md:block">
         
         {/* 1. Background Image Area */}
         <div className="relative h-[45vh] md:h-[600px] w-full overflow-hidden bg-slate-200">
-          {/* UPDATED: Using object-contain to ensure the LOGO is fully visible without cropping */}
           <img 
             src={localHeroBg}
             alt="Bharat Darshan Hero" 
-            className="w-full h-full object-contain animate-fade-in"
+            className="w-full h-full object-cover animate-fade-in"
           />
-          {/* Gradient Overlay - Adjusted to be darker so white text pops on any image */}
+          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-black/30 md:bg-gradient-to-t md:from-black/60 md:via-transparent md:to-black/30"></div>
         </div>
 
@@ -62,7 +80,7 @@ export default function Home() {
           
           <div className="bg-slate-50 rounded-t-[2.5rem] md:rounded-none md:bg-transparent min-h-[50vh] px-6 pt-8 pb-10 md:p-0 w-full md:max-w-5xl md:mx-auto md:text-center shadow-[0_-10px_40px_rgba(0,0,0,0.1)] md:shadow-none md:h-full md:flex md:flex-col md:justify-between md:py-12">
             
-            {/* Title Section - Moved to TOP on desktop to clear center */}
+            {/* Title Section */}
             <div className="mb-8 text-left md:text-center">
               <span className="text-orange-400 font-bold tracking-wider text-xs uppercase mb-2 block md:hidden">Incredible India</span>
               <h1 className="text-4xl md:text-7xl font-serif font-bold text-slate-900 leading-tight md:mb-6 md:drop-shadow-lg md:text-white md:shadow-black">
@@ -74,10 +92,8 @@ export default function Home() {
               </p>
             </div>
 
-            {/* SEARCH WIDGET - Kept at BOTTOM */}
+            {/* SEARCH WIDGET */}
             <div className="bg-white p-2 md:p-3 rounded-2xl md:rounded-full shadow-xl border border-slate-100 flex flex-col md:flex-row gap-2">
-              
-              {/* State Select */}
               <div className="flex-1 bg-slate-50 md:bg-white md:shadow-inner rounded-xl md:rounded-full px-4 py-3 flex items-center relative">
                 <MapPin className="text-orange-600 mr-3 w-5 h-5" />
                 <div className="flex flex-col items-start w-full">
@@ -95,7 +111,6 @@ export default function Home() {
 
               <div className="hidden md:flex w-px bg-slate-200 my-2"></div>
 
-              {/* Category Select */}
               <div className="flex-1 bg-slate-50 md:bg-white md:shadow-inner rounded-xl md:rounded-full px-4 py-3 flex items-center relative">
                 <Sparkles className="text-blue-600 mr-3 w-5 h-5" />
                 <div className="flex flex-col items-start w-full">
@@ -111,7 +126,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Search Button */}
               <button 
                 onClick={handleSearch}
                 className="bg-orange-600 active:scale-95 text-white p-4 md:px-10 md:py-4 rounded-xl md:rounded-full font-bold shadow-lg hover:shadow-orange-500/30 transition flex justify-center items-center gap-2"
@@ -124,7 +138,6 @@ export default function Home() {
       </div>
 
       {/* --- CATEGORY PILLS --- */}
-      {/* UPDATED: Removed negative margin (md:-mt-16) to prevent merging/overlap with search bar */}
       <div className="max-w-7xl mx-auto px-4 mt-6 relative z-20 mb-12">
         <h3 className="md:hidden text-lg font-bold text-slate-800 mb-4 px-2">Browse by Vibe</h3>
         <div className="flex overflow-x-auto pb-4 md:grid md:grid-cols-4 gap-4 hide-scrollbar snap-x">
@@ -157,7 +170,12 @@ export default function Home() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filteredPlaces.map(place => (
-            <div key={place.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition duration-500 border border-slate-100 group flex flex-col h-full">
+            /* Whole Card is a Link. Buttons removed. */
+            <Link 
+              to={`/place/${place.id}`} 
+              key={place.id} 
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition duration-500 border border-slate-100 group flex flex-col h-full cursor-pointer"
+            >
               
               {/* Image Section */}
               <div className="h-56 overflow-hidden relative">
@@ -178,18 +196,14 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <p className="text-slate-500 text-sm line-clamp-2 mb-4 leading-relaxed flex-grow">{place.description}</p>
+                <p className="text-slate-500 text-sm line-clamp-3 mb-4 leading-relaxed">{place.description}</p>
                 
-                <div className="grid grid-cols-2 gap-3 mt-auto pt-4 border-t border-slate-100">
-                  <Link to={`/place/${place.id}`} className="flex items-center justify-center gap-1 text-slate-700 bg-slate-50 hover:bg-slate-100 py-2 rounded-lg text-xs font-bold transition">
-                    View Details
-                  </Link>
-                  <a href="#" className="flex items-center justify-center gap-1 text-white bg-orange-600 hover:bg-orange-700 py-2 rounded-lg text-xs font-bold transition shadow-md shadow-orange-200">
-                    <Hotel size={14} /> Book Stay
-                  </a>
+                {/* Visual cue that it's clickable */}
+                <div className="mt-auto pt-4 border-t border-slate-100 flex items-center text-orange-600 font-bold text-sm">
+                  Explore Details <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
