@@ -30,7 +30,7 @@ export default function PlaceDetails() {
       <div className="relative h-[60vh] lg:h-[500px]">
         <img src={place.image} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-90"></div>
-        <div className="absolute bottom-0 left-0 p-6 md:p-12 max-w-7xl mx-auto w-full">
+        <div className="absolute bottom-0 left-0 px-6 pt-12 pb-24 md:pb-24 max-w-7xl mx-auto w-full">
           <div className="flex items-center gap-2 mb-3">
              <span className="bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">{place.category}</span>
              {place.badge && (
