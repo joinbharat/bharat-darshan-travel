@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PLACES, TOP_DESTINATIONS } from '../data/places/index';
 import { Link } from 'react-router-dom';
 import { Search, Mountain, Palmtree, Castle, Sparkles, MapPin, Hotel } from 'lucide-react';
+import localHeroBg from '../assets/bharatdarshannimage.jpeg'; // Your local image import
 
 export default function Home() {
   const [selectedState, setSelectedState] = useState("");
@@ -45,35 +46,35 @@ export default function Home() {
       <div className="relative flex flex-col md:block">
         
         {/* 1. Background Image Area */}
-        <div className="relative h-[45vh] md:h-[600px] w-full overflow-hidden">
-  {/* NEW IMAGE: Majestic Kedarnath Temple (Spiritual Theme) */}
-  <img 
-    src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2000"
-    alt="amer fort, jaipur" 
-    className="w-full h-full object-cover animate-fade-in"
-  />
-  {/* Gradient Overlay for better text readability */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/20 md:bg-gradient-to-t md:from-white/90 md:via-white/40 md:to-transparent"></div>
-</div>
+        <div className="relative h-[45vh] md:h-[600px] w-full overflow-hidden bg-slate-200">
+          {/* UPDATED: Using object-contain to ensure the LOGO is fully visible without cropping */}
+          <img 
+            src={localHeroBg}
+            alt="Bharat Darshan Hero" 
+            className="w-full h-full object-contain animate-fade-in"
+          />
+          {/* Gradient Overlay - Adjusted to be darker so white text pops on any image */}
+          <div className="absolute inset-0 bg-black/30 md:bg-gradient-to-t md:from-black/60 md:via-transparent md:to-black/30"></div>
+        </div>
 
         {/* 2. Content Card Area */}
-        <div className="relative z-10 -mt-12 md:mt-0 md:absolute md:inset-0 md:flex md:items-center md:justify-center px-0 md:px-4">
+        <div className="relative z-10 -mt-12 md:mt-0 md:absolute md:inset-0 md:px-4">
           
-          <div className="bg-slate-50 rounded-t-[2.5rem] md:rounded-none md:bg-transparent min-h-[50vh] px-6 pt-8 pb-10 md:p-0 w-full md:max-w-5xl md:mx-auto md:text-center shadow-[0_-10px_40px_rgba(0,0,0,0.1)] md:shadow-none">
+          <div className="bg-slate-50 rounded-t-[2.5rem] md:rounded-none md:bg-transparent min-h-[50vh] px-6 pt-8 pb-10 md:p-0 w-full md:max-w-5xl md:mx-auto md:text-center shadow-[0_-10px_40px_rgba(0,0,0,0.1)] md:shadow-none md:h-full md:flex md:flex-col md:justify-between md:py-12">
             
-            {/* Title Section */}
+            {/* Title Section - Moved to TOP on desktop to clear center */}
             <div className="mb-8 text-left md:text-center">
-              <span className="text-orange-600 font-bold tracking-wider text-xs uppercase mb-2 block md:hidden">Incredible India</span>
+              <span className="text-orange-400 font-bold tracking-wider text-xs uppercase mb-2 block md:hidden">Incredible India</span>
               <h1 className="text-4xl md:text-7xl font-serif font-bold text-slate-900 leading-tight md:mb-6 md:drop-shadow-lg md:text-white md:shadow-black">
                 <span className="md:hidden">Spiritual <br/> Journey</span>
-                <span className="hidden md:block text-shadow">Discover the <br/><span className="text-orange-500 md:text-orange-400">Soul of India</span></span>
+                <span className="hidden md:block text-shadow-lg">Discover the <br/><span className="text-orange-500 md:text-orange-400">Soul of India</span></span>
               </h1>
-              <p className="hidden md:block text-xl text-slate-800 max-w-2xl mx-auto font-medium bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg">
+              <p className="hidden md:block text-xl text-white max-w-2xl mx-auto font-medium drop-shadow-md">
                 Embark on a spiritual journey through ancient temples, sacred rivers, and timeless traditions.
               </p>
             </div>
 
-            {/* SEARCH WIDGET */}
+            {/* SEARCH WIDGET - Kept at BOTTOM */}
             <div className="bg-white p-2 md:p-3 rounded-2xl md:rounded-full shadow-xl border border-slate-100 flex flex-col md:flex-row gap-2">
               
               {/* State Select */}
@@ -123,7 +124,8 @@ export default function Home() {
       </div>
 
       {/* --- CATEGORY PILLS --- */}
-      <div className="max-w-7xl mx-auto px-4 md:-mt-16 relative z-20 mb-12">
+      {/* UPDATED: Removed negative margin (md:-mt-16) to prevent merging/overlap with search bar */}
+      <div className="max-w-7xl mx-auto px-4 mt-6 relative z-20 mb-12">
         <h3 className="md:hidden text-lg font-bold text-slate-800 mb-4 px-2">Browse by Vibe</h3>
         <div className="flex overflow-x-auto pb-4 md:grid md:grid-cols-4 gap-4 hide-scrollbar snap-x">
           {categoriesList.map((cat) => (
