@@ -3,13 +3,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import PlaceDetails from './components/PlaceDetails.jsx';
 import Login from './components/login.jsx'; 
-import Footer from './components/footer.jsx'; // 1. Import Footer
+import Navbar from './components/Navbar.jsx'; // Added Import
+import Footer from './components/footer.jsx'; 
 
 function App() {
   return (
     <BrowserRouter>
       {/* 2. Wrap everything in a flex container to handle layout */}
       <div className="flex flex-col min-h-screen">
+        {/* Add Navbar here so it appears at the top of every page */}
+        <Navbar />
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
