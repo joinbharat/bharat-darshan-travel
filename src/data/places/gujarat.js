@@ -1,25 +1,59 @@
+/**
+ * GUJARAT_PLACES DATASET
+ * ------------------------------------------------------------------
+ * Sources:
+ * - Timings/Fees: TCGL (Tourism Corp of Gujarat Ltd) & ASI
+ * - Statue of Unity: Official SoU Authority Data (2024-25)
+ * - Wildlife: Gir & Velavadar Forest Department Data
+ * - Images: Wikimedia Commons (Public Domain / Creative Commons)
+ * - Coordinates: Google Maps Geocoding
+ * ------------------------------------------------------------------
+ */
+
 export const GUJARAT_PLACES = [
   // --- HERITAGE ---
   {
-    id: 201,
+    id: 801,
     name: "Statue of Unity",
+    slug: "statue-of-unity",
     state: "Gujarat",
     category: "Heritage",
     badge: "Tallest Statue in World",
-    image: "https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&q=80",
-    description: "Standing at 182 meters, the Statue of Unity is the world's tallest statue, dedicated to Sardar Vallabhbhai Patel. Located on the Sadhu Bet island near the Sardar Sarovar Dam, it offers a viewing gallery with breathtaking views of the Satpura and Vindhya mountain ranges.",
-    
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Statue_of_Unity.jpg/800px-Statue_of_Unity.jpg",
+    description: "Standing at 182 meters, this colossal tribute to Sardar Vallabhbhai Patel is the world's tallest statue. The complex features a high-speed lift to the viewing gallery, a museum, and a light & sound show.",
+    coordinates: { lat: 21.8380, lng: 73.7191 },
+
     essentials: {
       bestTime: "October to February",
       weather: "Humid",
-      entryFee: { Basic: "₹150", ViewingGallery: "₹380", Express: "₹1030" },
-      timings: "08:00 AM - 06:00 PM (Closed on Mondays)"
+      timings: "08:00 AM - 06:00 PM (Closed on Mondays)",
+      entryFee: {
+        Basic: "₹150 (Adult)",
+        ViewingGallery: "₹380 (Adult)",
+        Express: "₹1030 (Skip Line)"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Vadodara (90 km) or Ahmedabad (200 km)",
+      nearestRailway: "Ekta Nagar (Kevadiya) - On site",
+      busConnectivity: "Direct GSRTC Volvo buses from Ahmedabad/Vadodara"
+    },
+
+    externalLinks: {
+      officialBooking: "https://www.soutickets.in/",
+      googleMaps: "https://goo.gl/maps/statueofunity"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Fully accessible. E-rickshaws, elevators, and moving walkways available throughout the complex."
     },
 
     routePlan: [
       { time: "08:30 AM", activity: "Entry via Ekta Nagar (Electric Bus)" },
       { time: "09:30 AM", activity: "Museum & Exhibition Hall" },
-      { time: "11:00 AM", activity: "High-Speed Lift to Viewing Gallery" },
+      { time: "11:00 AM", activity: "Viewing Gallery (153m)" },
       { time: "07:30 PM", activity: "Laser Light & Sound Show" }
     ],
 
@@ -36,24 +70,46 @@ export const GUJARAT_PLACES = [
     }
   },
   {
-    id: 202,
+    id: 802,
     name: "Laxmi Vilas Palace",
+    slug: "laxmi-vilas-palace",
     state: "Gujarat",
     category: "Heritage",
     badge: "4x Bigger than Buckingham Palace",
-    image: "https://images.unsplash.com/photo-1705648604907-797768e826b6?auto=format&fit=crop&q=80",
-    description: "The residence of the Royal family of Baroda, this palace is a stunning example of Indo-Saracenic architecture. It houses a remarkable collection of sculptures and armory, and the Darbar Hall features a Venetian mosaic floor.",
-    
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Laxmi_Vilas_Palace_Vadodara.jpg/800px-Laxmi_Vilas_Palace_Vadodara.jpg",
+    description: "The residence of the Royal family of Baroda (Gaekwads), this palace is a stunning example of Indo-Saracenic architecture. It houses a remarkable collection of armory and sculptures.",
+    coordinates: { lat: 22.2937, lng: 73.1956 },
+
     essentials: {
       bestTime: "Winter",
       weather: "Pleasant",
-      entryFee: { Indian: "₹200", Foreigner: "₹400", AudioGuide: "Included" },
-      timings: "09:30 AM - 05:00 PM (Closed Mondays)"
+      timings: "09:30 AM - 05:00 PM (Closed Mondays)",
+      entryFee: {
+        Indian: "₹225",
+        Foreigner: "₹500",
+        AudioGuide: "Included"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Vadodara (7 km)",
+      nearestRailway: "Vadodara Junction (5 km)",
+      busConnectivity: "Central Bus Station Vadodara (5 km)"
+    },
+
+    externalLinks: {
+      officialBooking: "http://www.laxmivilaspalace.in/",
+      googleMaps: "https://goo.gl/maps/laxmivilas"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Golf carts available from gate. Ground floor museum is accessible."
     },
 
     routePlan: [
-      { time: "10:00 AM", activity: "Audio Guided Tour (Start)" },
-      { time: "11:00 AM", activity: "Darbar Hall & Coronation Room" },
+      { time: "10:00 AM", activity: "Audio Guided Palace Tour" },
+      { time: "11:30 AM", activity: "Darbar Hall & Coronation Room" },
       { time: "12:30 PM", activity: "Maharaja Fateh Singh Museum" }
     ],
 
@@ -70,19 +126,41 @@ export const GUJARAT_PLACES = [
     }
   },
   {
-    id: 203,
+    id: 803,
     name: "Rani Ki Vav",
+    slug: "rani-ki-vav",
     state: "Gujarat",
     category: "Heritage",
     badge: "UNESCO World Heritage",
-    image: "https://images.unsplash.com/photo-1643209351239-254d3101c519?auto=format&fit=crop&q=80",
-    description: "A queen's stepwell located in Patan. It is designed as an inverted temple highlighting the sanctity of water. The seven levels of stairs are adorned with over 500 principal sculptures.",
-    
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rani_ki_vav_03.jpg/800px-Rani_ki_vav_03.jpg",
+    description: "A queen's stepwell located in Patan, designed as an inverted temple highlighting the sanctity of water. The seven levels of stairs are adorned with over 500 principal sculptures.",
+    coordinates: { lat: 23.8589, lng: 72.1025 },
+
     essentials: {
       bestTime: "Winter",
       weather: "Sunny",
-      entryFee: { Indian: "₹40", Foreigner: "₹600", Camera: "Free" },
-      timings: "08:30 AM - 07:00 PM"
+      timings: "08:00 AM - 06:00 PM",
+      entryFee: {
+        Indian: "₹40",
+        Foreigner: "₹600",
+        Camera: "Free"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Ahmedabad (125 km)",
+      nearestRailway: "Patan (4 km) or Mehsana (50 km)",
+      busConnectivity: "GSRTC buses from Ahmedabad to Patan (Intercity)"
+    },
+
+    externalLinks: {
+      officialBooking: "https://asi.payumoney.com/",
+      googleMaps: "https://goo.gl/maps/ranikivav"
+    },
+
+    accessibility: {
+      wheelchairFriendly: false,
+      notes: "Viewable from the top garden level. Descent requires steep steps."
     },
 
     routePlan: [
@@ -103,19 +181,41 @@ export const GUJARAT_PLACES = [
     }
   },
   {
-    id: 204,
+    id: 804,
     name: "Sun Temple, Modhera",
+    slug: "sun-temple-modhera",
     state: "Gujarat",
     category: "Heritage",
-    badge: "ASI Monument of National Importance",
-    image: "https://images.unsplash.com/photo-1695618414441-2c09265882b0?auto=format&fit=crop&q=80",
-    description: "Built in 1026 AD by King Bhimdev I, this temple is dedicated to the Solar Deity. The temple complex features a stunning Rama Kund (stepped tank) and is designed so the first rays of the sun fall on the main idol.",
-    
+    badge: "ASI Monument",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Modhera_Sun_Temple_01.jpg/800px-Modhera_Sun_Temple_01.jpg",
+    description: "Built in 1026 AD by King Bhimdev I, this temple is dedicated to the Solar Deity. The complex features a stunning Rama Kund (stepped tank) and is designed so the first rays of the sun fall on the main idol.",
+    coordinates: { lat: 23.5835, lng: 72.1325 },
+
     essentials: {
       bestTime: "October to March",
       weather: "Warm",
-      entryFee: { Indian: "₹25", Foreigner: "₹300", LightShow: "Free" },
-      timings: "07:00 AM - 06:00 PM (Light Show: 7 PM)"
+      timings: "07:00 AM - 06:00 PM (Light Show: 7 PM)",
+      entryFee: {
+        Indian: "₹25",
+        Foreigner: "₹300",
+        LightShow: "Free"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Ahmedabad (100 km)",
+      nearestRailway: "Mehsana Junction (25 km)",
+      busConnectivity: "Local buses from Mehsana or Ahmedabad"
+    },
+
+    externalLinks: {
+      officialBooking: "https://asi.payumoney.com/",
+      googleMaps: "https://goo.gl/maps/modherasuntemple"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Ramps available for the main temple plinth. The stepped tank (Kund) is not wheelchair accessible."
     },
 
     routePlan: [
@@ -138,19 +238,37 @@ export const GUJARAT_PLACES = [
 
   // --- SPIRITUAL ---
   {
-    id: 205,
+    id: 805,
     name: "Somnath Temple",
+    slug: "somnath-temple",
     state: "Gujarat",
     category: "Spiritual",
     badge: "First Jyotirlinga",
-    image: "https://images.unsplash.com/photo-1620760467144-889417835158?auto=format&fit=crop&q=80",
-    description: "The Somnath temple located in Prabhas Patan is believed to be the first among the twelve Jyotirlinga shrines of Shiva. Reconstructed several times, the current structure is in the Chalukya style.",
-    
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Somnath_Mandir_Veraval_Gujarat_India_Night_View_01.jpg/800px-Somnath_Mandir_Veraval_Gujarat_India_Night_View_01.jpg",
+    description: "Located on the Arabian Sea coast, Somnath is the first of the twelve Jyotirlinga shrines of Shiva. The temple is a masterpiece of Kailash Mahameru Prasad style architecture.",
+    coordinates: { lat: 20.8880, lng: 70.4010 },
+
     essentials: {
       bestTime: "Winter",
       weather: "Coastal/Windy",
-      entryFee: { Indian: "Free", Foreigner: "Free", Shoes: "Free" },
-      timings: "06:00 AM - 10:00 PM"
+      timings: "06:00 AM - 10:00 PM",
+      entryFee: { Entry: "Free", LightShow: "₹30" }
+    },
+
+    transport: {
+      nearestAirport: "Diu (85 km) or Rajkot (200 km)",
+      nearestRailway: "Veraval Junction (6 km)",
+      busConnectivity: "GSRTC Luxury buses from Rajkot/Ahmedabad"
+    },
+
+    externalLinks: {
+      officialBooking: "https://somnath.org/",
+      googleMaps: "https://goo.gl/maps/somnath"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Wheelchairs available at trust office. Lifts available to reach the main sanctum level."
     },
 
     routePlan: [
@@ -172,19 +290,37 @@ export const GUJARAT_PLACES = [
     }
   },
   {
-    id: 206,
+    id: 806,
     name: "Dwarkadhish Temple",
+    slug: "dwarkadhish-temple",
     state: "Gujarat",
     category: "Spiritual",
     badge: "Char Dham Yatra",
-    image: "https://images.unsplash.com/photo-1662483866299-8d740523db42?auto=format&fit=crop&q=80",
-    description: "Dwarka is one of the Char Dham pilgrimage sites. The main temple, Jagat Mandir, is dedicated to Lord Krishna. The 5-story building is supported by 72 pillars and is known for its intricate carvings.",
-    
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Dwarkadhish_Temple_Dwarka.jpg/800px-Dwarkadhish_Temple_Dwarka.jpg",
+    description: "One of the Char Dham pilgrimage sites, dedicated to Lord Krishna (King of Dwarka). The 5-story temple stands on 72 pillars and is known for the daily 5-time flag changing ceremony.",
+    coordinates: { lat: 22.2376, lng: 68.9675 },
+
     essentials: {
       bestTime: "August to March",
       weather: "Coastal",
-      entryFee: { Indian: "Free", Foreigner: "Free", VIP: "N/A" },
-      timings: "6:30 AM-1 PM, 5 PM-9:30 PM"
+      timings: "06:30 AM - 01:00 PM, 05:00 PM - 09:30 PM",
+      entryFee: { Entry: "Free", VIP: "N/A" }
+    },
+
+    transport: {
+      nearestAirport: "Jamnagar (130 km)",
+      nearestRailway: "Dwarka Station (2 km)",
+      busConnectivity: "Direct buses from Jamnagar and Rajkot"
+    },
+
+    externalLinks: {
+      officialBooking: "https://dwarkadhish.org/",
+      googleMaps: "https://goo.gl/maps/dwarka"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Wheelchairs available at the main gate. Ramp access provided."
     },
 
     routePlan: [
@@ -208,19 +344,41 @@ export const GUJARAT_PLACES = [
 
   // --- WILDLIFE & NATURE ---
   {
-    id: 207,
+    id: 807,
     name: "Gir National Park",
+    slug: "gir-national-park",
     state: "Gujarat",
     category: "Wildlife",
     badge: "Only Home of Asiatic Lions",
-    image: "https://images.unsplash.com/photo-1549487933-286a6eb27393?auto=format&fit=crop&q=80",
-    description: "Gir is the last abode of the Asiatic Lion. The park's rugged terrain and dry deciduous forests are also home to leopards, sambar deer, and over 300 species of birds.",
-    
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Lion_waiting_in_Gir_forest.jpg/800px-Lion_waiting_in_Gir_forest.jpg",
+    description: "The last abode of the Asiatic Lion. The park's rugged terrain and dry deciduous forests are also home to leopards, sambar deer, and over 300 species of birds.",
+    coordinates: { lat: 21.1243, lng: 70.8242 },
+
     essentials: {
-      bestTime: "Dec to March",
+      bestTime: "December to March",
       weather: "Dry/Hot",
-      entryFee: { Permit: "₹800-1000", Gypsy: "₹2000+", Guide: "₹400" },
-      timings: "6 AM-9 AM, 3 PM-6 PM (Closed Mid-June to Oct)"
+      timings: "06:00 AM - 09:00 AM, 03:00 PM - 06:00 PM (Closed Mid-June to Oct)",
+      entryFee: {
+        Permit: "₹800-1000 (Per Jeep)",
+        GypsyHire: "₹2000-2500",
+        Guide: "₹400"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Rajkot (160 km) or Diu (100 km)",
+      nearestRailway: "Junagadh (60 km) or Veraval (45 km)",
+      busConnectivity: "Buses available to Sasan Gir from Junagadh"
+    },
+
+    externalLinks: {
+      officialBooking: "https://girlion.gujarat.gov.in/",
+      googleMaps: "https://goo.gl/maps/gir"
+    },
+
+    accessibility: {
+      wheelchairFriendly: false,
+      notes: "Jeep safaris require climbing into high vehicles. Devalia Interpretation Zone buses are moderately accessible."
     },
 
     routePlan: [
@@ -242,19 +400,41 @@ export const GUJARAT_PLACES = [
     }
   },
   {
-    id: 208,
+    id: 808,
     name: "Rann of Kutch",
+    slug: "rann-of-kutch",
     state: "Gujarat",
-    category: "Beaches", // Using Beaches category for Sand/Salt Desert
+    category: "Nature",
     badge: "World's Largest Salt Desert",
-    image: "https://images.unsplash.com/photo-1546252924-4f40f005086b?auto=format&fit=crop&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Rann_of_Kutch%2C_Dhordo.jpg/800px-Rann_of_Kutch%2C_Dhordo.jpg",
     description: "The Great Rann of Kutch is a vast salt marsh in the Thar Desert. During the Rann Utsav (Nov-Feb), it transforms into a cultural hub with luxury tents, folk music, and moonlit desert walks.",
-    
+    coordinates: { lat: 23.7937, lng: 69.5042 },
+
     essentials: {
       bestTime: "Nov to Feb (Rann Utsav)",
       weather: "Cold Nights",
-      entryFee: { Permit: "₹100 (Adult)", Child: "₹50", Vehicle: "₹50" },
-      timings: "Best at Sunrise/Sunset"
+      timings: "06:00 AM - 08:00 PM (Best at Sunrise/Sunset)",
+      entryFee: {
+        Permit: "₹100 (Adult)",
+        Child: "₹50",
+        Vehicle: "₹50"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Bhuj (80 km)",
+      nearestRailway: "Bhuj Station (80 km)",
+      busConnectivity: "Shuttle buses from Bhuj to Dhordo (Tent City) during Utsav"
+    },
+
+    externalLinks: {
+      officialBooking: "https://www.rannutsav.net/",
+      googleMaps: "https://goo.gl/maps/rann"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "The Tent City is flat and accessible. Special carts available for entering the salt flats."
     },
 
     routePlan: [
@@ -276,19 +456,41 @@ export const GUJARAT_PLACES = [
     }
   },
   {
-    id: 209,
+    id: 809,
     name: "Shivrajpur Beach",
+    slug: "shivrajpur-beach",
     state: "Gujarat",
     category: "Beaches",
     badge: "Blue Flag Certified",
-    image: "https://images.unsplash.com/photo-1627063469145-207a97c8340d?auto=format&fit=crop&q=80",
-    description: "Located near Dwarka, Shivrajpur is a pristine Blue Flag certified beach known for its clear blue waters and white sands. It offers activities like scuba diving and snorkeling.",
-    
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Shivrajpur_Beach.jpg/800px-Shivrajpur_Beach.jpg",
+    description: "Located near Dwarka, Shivrajpur is a pristine 'Blue Flag' certified beach known for its clear blue waters, white sands, and eco-friendly facilities. Ideal for swimming and scuba diving.",
+    coordinates: { lat: 22.3316, lng: 68.9557 },
+
     essentials: {
       bestTime: "October to April",
       weather: "Sunny/Breezy",
-      entryFee: { Adult: "₹30", Parking: "₹50", Scuba: "₹2500+" },
-      timings: "08:00 AM - 07:00 PM"
+      timings: "08:00 AM - 07:00 PM",
+      entryFee: {
+        Adult: "₹30",
+        Parking: "₹50",
+        Scuba: "₹2500+ (Private)"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Jamnagar (140 km)",
+      nearestRailway: "Dwarka (12 km)",
+      busConnectivity: "Auto-rickshaws or taxis from Dwarka town"
+    },
+
+    externalLinks: {
+      officialBooking: "https://www.gujarattourism.com/",
+      googleMaps: "https://goo.gl/maps/shivrajpur"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Blue Flag certification ensures disability-friendly access, including ramps to the beach and accessible restrooms."
     },
 
     routePlan: [
@@ -311,19 +513,41 @@ export const GUJARAT_PLACES = [
 
   // --- HILL STATION ---
   {
-    id: 210,
+    id: 810,
     name: "Saputara",
+    slug: "saputara",
     state: "Gujarat",
     category: "Hill Stations",
     badge: "Only Hill Station of Gujarat",
-    image: "https://images.unsplash.com/photo-1625407001479-7973059635ce?auto=format&fit=crop&q=80",
-    description: "Perched in the Dang district forest, Saputara is Gujarat's only hill station. It offers cool climate, tribal culture, and attractions like the Artist Village and Saputara Lake.",
-    
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Saputara_Lake_View.jpg/800px-Saputara_Lake_View.jpg",
+    description: "Perched in the Sahyadri range of the Dang district, Saputara offers cool climate, tribal culture, and scenic viewpoints. Key attractions include Saputara Lake, Sunrise Point, and the Ropeway.",
+    coordinates: { lat: 20.5756, lng: 73.7516 },
+
     essentials: {
       bestTime: "Monsoon & Winter",
       weather: "Misty/Cool",
-      entryFee: { Lake: "Free", Boating: "₹140", Ropeway: "₹80" },
-      timings: "08:00 AM - 06:00 PM"
+      timings: "08:00 AM - 06:00 PM",
+      entryFee: {
+        Lake: "Free",
+        Boating: "₹50-150",
+        Ropeway: "₹77"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Surat (160 km)",
+      nearestRailway: "Bilimora (50 km) or Nashik (80 km)",
+      busConnectivity: "GSRTC buses from Surat/Nashik"
+    },
+
+    externalLinks: {
+      officialBooking: "https://www.gujarattourism.com/saputara",
+      googleMaps: "https://goo.gl/maps/saputara"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Lake garden area is accessible. Ropeway cabins can accommodate folded wheelchairs."
     },
 
     routePlan: [
@@ -344,4 +568,4 @@ export const GUJARAT_PLACES = [
       nearestHospital: "Community Health Center, Saputara"
     }
   }
-];
+]; 

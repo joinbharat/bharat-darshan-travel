@@ -1,360 +1,567 @@
+/**
+ * KERALA_PLACES DATASET
+ * ------------------------------------------------------------------
+ * Sources:
+ * - Timings/Fees: Kerala Tourism, DTPC (District Tourism Promotion Council) & Forest Dept
+ * - Houseboats: Standard Industry Timings (Alleppey/Kumarakom)
+ * - Wildlife: Periyar & Eravikulam National Park Official Data
+ * - Images: Wikimedia Commons (Public Domain / Creative Commons)
+ * - Coordinates: Google Maps Geocoding
+ * ------------------------------------------------------------------
+ */
+
 export const KERALA_PLACES = [
-  // --- HILL STATIONS ---
+  // --- BACKWATERS & BEACHES ---
   {
-    id: 301,
-    name: "Munnar",
+    id: 1301,
+    name: "Alleppey Backwaters",
+    slug: "alleppey-backwaters",
     state: "Kerala",
-    category: "Hill Stations",
-    badge: "Kashmir of South India",
-    // Wikimedia: Tea Gardens
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Munnar_hillstation_kerala.jpg/800px-Munnar_hillstation_kerala.jpg",
-    description: "Munnar is a town in the Western Ghats mountain range in Kerala. It is famous for its rolling hills dotted with tea plantations established in the late 19th century. Eravikulam National Park, a habitat for the endangered mountain goat Nilgiri tahr, is a home to the Lakkam Waterfalls, hiking trails and 2,695m-tall Anamudi Peak.",
-    
+    category: "Nature",
+    badge: "Venice of the East",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Alappuzha_Boat_Beauty_W.jpg/800px-Alappuzha_Boat_Beauty_W.jpg",
+    description: "Famous for its intricate network of canals, lagoons, and houseboats. A cruise here offers a glimpse into the rustic life of Kuttanad, the 'Rice Bowl of Kerala'.",
+    coordinates: { lat: 9.4981, lng: 76.3388 },
+
     essentials: {
       bestTime: "September to March",
-      weather: "Misty/Cold",
-      entryFee: { NationalPark: "₹200", TeaMuseum: "₹125", Boating: "₹500" },
-      timings: "National Park: 7:30 AM - 4:00 PM (Closed Feb-Mar for calving)"
+      weather: "Tropical/Humid",
+      timings: "Houseboat Check-in: 12:00 PM, Check-out: 09:00 AM",
+      entryFee: {
+        Houseboat: "₹7000-15000 (1 Night/2 Pax)",
+        Shikara: "₹600-1000/hr",
+        Canoe: "₹300/hr"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Cochin International Airport (85 km)",
+      nearestRailway: "Alappuzha (4 km)",
+      busConnectivity: "KSRTC buses from Kochi and Trivandrum"
+    },
+
+    externalLinks: {
+      officialBooking: "https://www.keralatourism.org/",
+      googleMaps: "https://goo.gl/maps/alleppey"
+    },
+
+    accessibility: {
+      wheelchairFriendly: false,
+      notes: "Boarding houseboats requires stepping over gaps. Some luxury boats are accessible."
     },
 
     routePlan: [
-      { time: "08:00 AM", activity: "Eravikulam National Park (Book Online)" },
-      { time: "11:00 AM", activity: "Tea Museum & Factory Visit" },
-      { time: "02:00 PM", activity: "Mattupetty Dam Boating" },
-      { time: "04:30 PM", activity: "Top Station View Point" }
+      { time: "12:00 PM", activity: "Check-in to Houseboat" },
+      { time: "01:30 PM", activity: "Traditional Kerala Lunch on board" },
+      { time: "05:00 PM", activity: "Village Walk & Tea" }
     ],
 
     foodGuide: [
-      { name: "Rapsy Restaurant", type: "Budget", specialty: "Beef Fry & Parotta", rating: 4.5 },
-      { name: "Saravana Bhavan", type: "Vegetarian", specialty: "South Indian Thali", rating: 4.3 }
+      { name: "Houseboat Kitchen", type: "Onboard", specialty: "Karimeen Pollichathu (Pearl Spot Fish)", rating: 4.8 },
+      { name: "Thaff", type: "City", specialty: "Biryani & Shawarma", rating: 4.2 }
     ],
 
     emergency: {
       police: "100",
       ambulance: "108",
-      touristHelpline: "1-800-425-4747",
-      nearestHospital: "Tata General Hospital, Munnar"
+      touristHelpline: "1800-425-4747",
+      nearestHospital: "General Hospital Alappuzha"
     }
   },
   {
-    id: 302,
-    name: "Wayanad",
-    state: "Kerala",
-    category: "Hill Stations",
-    badge: "Land of Paddy Fields",
-    // Wikimedia: Wayanad Landscape
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Wayanad_Churam.jpg/800px-Wayanad_Churam.jpg",
-    description: "Wayanad is a rural district in Kerala, known for its lush, green landscapes, spice plantations, and wildlife. The Edakkal Caves contain ancient petroglyphs, some dating back to the Neolithic age.",
-    
-    essentials: {
-      bestTime: "October to May",
-      weather: "Pleasant",
-      entryFee: { EdakkalCaves: "₹50", BanasuraDam: "₹40", Jeep: "₹800" },
-      timings: "Caves: 9:00 AM - 4:00 PM (Closed Mondays)"
-    },
-
-    routePlan: [
-      { time: "09:00 AM", activity: "Edakkal Caves Trek (Steep Climb)" },
-      { time: "12:00 PM", activity: "Wayanad Heritage Museum" },
-      { time: "03:00 PM", activity: "Banasura Sagar Dam Speed Boating" }
-    ],
-
-    foodGuide: [
-      { name: "1980's A Nostalgic Restaurant", type: "Theme", specialty: "Clay Pot Meals", rating: 4.7 },
-      { name: "Wilton Restaurant", type: "Family", specialty: "Fish Moilee", rating: 4.4 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1-800-425-4747",
-      nearestHospital: "WIMS Medical College, Meppadi"
-    }
-  },
-
-  // --- NATURE / BACKWATERS ---
-  {
-    id: 303,
-    name: "Alleppey (Alappuzha)",
-    state: "Kerala",
-    category: "Beaches", // Used for Water/Backwaters
-    badge: "Venice of the East",
-    // Wikimedia: Houseboat
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Alappuzha_Boat_Beauty_W.jpg/800px-Alappuzha_Boat_Beauty_W.jpg",
-    description: "Alappuzha (Alleppey) is the hub of Kerala's backwaters, home to a vast network of waterways and more than a thousand houseboats. It is famous for its boat races, beaches, marine products, and coir industry.",
-    
-    essentials: {
-      bestTime: "November to February",
-      weather: "Humid/Tropical",
-      entryFee: { Houseboat: "₹7000+ (Overnight)", Shikara: "₹600/hr", Beach: "Free" },
-      timings: "Houseboat Check-in: 12:00 PM"
-    },
-
-    routePlan: [
-      { time: "11:00 AM", activity: "Check-in to Houseboat/Shikara" },
-      { time: "01:00 PM", activity: "Lunch on Boat (Karimeen Fish)" },
-      { time: "05:00 PM", activity: "Alleppey Beach & Lighthouse" }
-    ],
-
-    foodGuide: [
-      { name: "Halais Restaurant", type: "Biryani", specialty: "Malabar Biryani", rating: 4.4 },
-      { name: "Dreamers Cafe", type: "Beachside", specialty: "Seafood Platter", rating: 4.2 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1-800-425-4747",
-      nearestHospital: "General Hospital, Alappuzha"
-    }
-  },
-  {
-    id: 304,
-    name: "Kumarakom",
-    state: "Kerala",
-    category: "Nature/Wildlife",
-    badge: "Bird Sanctuary & Backwaters",
-    // Wikimedia: Vembanad Lake
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Kumarakom_houseboat.jpg/800px-Kumarakom_houseboat.jpg",
-    description: "Kumarakom is a cluster of little islands on the Vembanad Lake. It is home to the Kumarakom Bird Sanctuary, a favorite haunt of migratory birds like the Siberian stork. A quieter alternative to Alleppey.",
-    
-    essentials: {
-      bestTime: "November to February",
-      weather: "Pleasant",
-      entryFee: { Sanctuary: "₹100", Boating: "₹400/hr" },
-      timings: "Sanctuary: 6:00 AM - 6:00 PM"
-    },
-
-    routePlan: [
-      { time: "06:30 AM", activity: "Bird Sanctuary Walk (Best for sighting)" },
-      { time: "10:00 AM", activity: "Driftwood Museum" },
-      { time: "04:00 PM", activity: "Sunset Cruise on Vembanad Lake" }
-    ],
-
-    foodGuide: [
-      { name: "Tharavadu Restaurant", type: "Heritage", specialty: "Duck Roast", rating: 4.6 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1-800-425-4747",
-      nearestHospital: "Govt Community Health Centre"
-    }
-  },
-  {
-    id: 305,
-    name: "Athirappilly Waterfalls",
-    state: "Kerala",
-    category: "Nature/Wildlife",
-    badge: "Niagara of India",
-    // Wikimedia: Athirappilly Falls
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Athirappilly_Waterfalls_2.jpg/800px-Athirappilly_Waterfalls_2.jpg",
-    description: "Athirappilly is the largest waterfall in Kerala, standing 80 feet tall. Located on the Chalakudy River, it sits at the entrance to the Sholayar ranges of the Western Ghats. Famous filming location for the movie 'Baahubali'.",
-    
-    essentials: {
-      bestTime: "June to October (Monsoon)",
-      weather: "Wet/Humid",
-      entryFee: { Adult: "₹50", Student: "₹15", Camera: "₹20" },
-      timings: "08:00 AM - 06:00 PM"
-    },
-
-    routePlan: [
-      { time: "09:00 AM", activity: "Trek to bottom of falls (Steep)" },
-      { time: "11:00 AM", activity: "Viewpoint from top" },
-      { time: "01:00 PM", activity: "Visit nearby Vazhachal Falls" }
-    ],
-
-    foodGuide: [
-      { name: "Rainforest Resort", type: "View", specialty: "Lunch with Waterfall View", rating: 4.5 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1-800-425-4747",
-      nearestHospital: "St. James Hospital, Chalakudy"
-    }
-  },
-
-  // --- WILDLIFE ---
-  {
-    id: 306,
-    name: "Periyar National Park (Thekkady)",
-    state: "Kerala",
-    category: "Wildlife",
-    badge: "Tiger Reserve",
-    // Wikimedia: Periyar Lake Boating
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Periyar_National_Park_Lake.jpg/800px-Periyar_National_Park_Lake.jpg",
-    description: "Located in Thekkady, this sanctuary is famous for its dense evergreen forests and savanna grass lands. It is home to herds of elephants, sambar, tigers, gaur, lion-tailed macaques and Nilgiri langurs.",
-    
-    essentials: {
-      bestTime: "September to April",
-      weather: "Cool",
-      entryFee: { Boat: "₹255", Entry: "₹45", BambooRafting: "₹2000+" },
-      timings: "Boating: 7:30, 9:30, 11:15, 1:45, 3:30"
-    },
-
-    routePlan: [
-      { time: "07:30 AM", activity: "First Boat Safari (Best for wildlife)" },
-      { time: "10:30 AM", activity: "Spice Plantation Tour" },
-      { time: "06:00 PM", activity: "Kathakali & Kalaripayattu Show" }
-    ],
-
-    foodGuide: [
-      { name: "Bamboo Cafe", type: "Forest Dept", specialty: "Snacks", rating: 4.0 },
-      { name: "Ebony's Cafe", type: "City", specialty: "Continental", rating: 4.3 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1-800-425-4747",
-      nearestHospital: "Govt Hospital Kumily"
-    }
-  },
-
-  // --- BEACHES ---
-  {
-    id: 307,
-    name: "Varkala",
+    id: 1302,
+    name: "Varkala Beach",
+    slug: "varkala-beach",
     state: "Kerala",
     category: "Beaches",
     badge: "Only Cliff Beach in Kerala",
-    // Wikimedia: Varkala Cliff
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Varkala_Beach_Kerala.jpg/800px-Varkala_Beach_Kerala.jpg",
-    description: "Varkala is the only place in southern Kerala where cliffs are found adjacent to the Arabian Sea. Known for its hippie culture, shacks on the cliff edge, and the 2000-year-old Janardana Swami Temple.",
-    
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Varkala_Beach_View.jpg/800px-Varkala_Beach_View.jpg",
+    description: "A stunning beach where cliffs merge with the Arabian Sea. It is known for its natural springs, the Janardanaswamy Temple, and a vibrant backpacker culture.",
+    coordinates: { lat: 8.7379, lng: 76.7163 },
+
     essentials: {
       bestTime: "October to March",
-      weather: "Sunny/Breezy",
-      entryFee: { Beach: "Free", Sunbeds: "₹300/day" },
-      timings: "Always Open (Shacks close by 10-11 PM)"
+      weather: "Breezy/Sunny",
+      timings: "24 Hours (Lifeguards: 7 AM - 6 PM)",
+      entryFee: { Entry: "Free" }
+    },
+
+    transport: {
+      nearestAirport: "Trivandrum (40 km)",
+      nearestRailway: "Varkala Sivagiri (3 km)",
+      busConnectivity: "Buses from Trivandrum and Kollam"
+    },
+
+    externalLinks: {
+      officialBooking: "https://www.keralatourism.org/",
+      googleMaps: "https://goo.gl/maps/varkala"
+    },
+
+    accessibility: {
+      wheelchairFriendly: false,
+      notes: "The cliff top is flat, but accessing the beach requires descending steep steps."
     },
 
     routePlan: [
       { time: "08:00 AM", activity: "Morning Yoga on Cliff" },
-      { time: "10:00 AM", activity: "Swim at Papanasam Beach" },
+      { time: "10:00 AM", activity: "Swim & Sunbathe" },
       { time: "05:30 PM", activity: "Sunset from North Cliff Cafes" }
     ],
 
     foodGuide: [
-      { name: "Cafe del Mar", type: "Cliffside", specialty: "Grilled Fish & Pasta", rating: 4.6 },
-      { name: "Darjeeling Cafe", type: "Chill", specialty: "Smoothies & Momos", rating: 4.5 }
+      { name: "Darjeeling Cafe", type: "Cliffside", specialty: "Tibetan & Seafood", rating: 4.5 },
+      { name: "Abba Restaurant", type: "Bakery", specialty: "European Breakfast", rating: 4.4 }
     ],
 
     emergency: {
       police: "100",
       ambulance: "108",
-      touristHelpline: "1-800-425-4747",
-      nearestHospital: "Sivagiri Sree Narayana Medical Mission"
+      touristHelpline: "1800-425-4747",
+      nearestHospital: "Mission Hospital Varkala"
     }
   },
+
+  // --- HILL STATIONS & WILDLIFE ---
   {
-    id: 308,
-    name: "Kovalam",
+    id: 1303,
+    name: "Munnar",
+    slug: "munnar",
     state: "Kerala",
-    category: "Beaches",
-    badge: "Iconic Lighthouse Beach",
-    // Wikimedia: Kovalam Lighthouse
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Kovalam_Beach_Thiruvananthapuram.jpg/800px-Kovalam_Beach_Thiruvananthapuram.jpg",
-    description: "Kovalam is an internationally renowned beach with three adjacent crescent beaches. It has been a favorite haunt of tourists since the 1930s. The massive rocky promontory on the beach has created a beautiful bay of calm waters ideal for sea bathing.",
-    
+    category: "Hill Stations",
+    badge: "Kashmir of South India",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Munnar_Tea_Plantations.jpg/800px-Munnar_Tea_Plantations.jpg",
+    description: "Famous for its endless rolling tea gardens, misty hills, and the Eravikulam National Park (home to the endangered Nilgiri Tahr). Located at the confluence of three rivers.",
+    coordinates: { lat: 10.0889, lng: 77.0595 },
+
     essentials: {
       bestTime: "September to March",
-      weather: "Hot/Humid",
-      entryFee: { Beach: "Free", Lighthouse: "₹20" },
-      timings: "Lighthouse: 10:00 AM - 5:00 PM (Closed Mondays)"
+      weather: "Cold/Misty",
+      timings: "24 Hours (Park: 7:30 AM - 4 PM)",
+      entryFee: {
+        Park: "₹125 (Indian)",
+        TeaMuseum: "₹125",
+        Bloom: "Extra (Neelakurinji year)"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Cochin (110 km)",
+      nearestRailway: "Aluva (110 km)",
+      busConnectivity: "Scenic drive via KSRTC buses from Kochi"
+    },
+
+    externalLinks: {
+      officialBooking: "https://eravikulam.org/",
+      googleMaps: "https://goo.gl/maps/munnar"
+    },
+
+    accessibility: {
+      wheelchairFriendly: false,
+      notes: "Tea gardens are hilly. Eravikulam park buses are not wheelchair accessible."
     },
 
     routePlan: [
-      { time: "09:00 AM", activity: "Climb Lighthouse for View" },
-      { time: "11:00 AM", activity: "Water Sports at Hawa Beach" },
-      { time: "04:00 PM", activity: "Relax at Samudra Beach (Quieter)" }
+      { time: "08:30 AM", activity: "Eravikulam National Park" },
+      { time: "11:30 AM", activity: "Tea Museum Visit" },
+      { time: "03:00 PM", activity: "Mattupetty Dam & Echo Point" }
     ],
 
     foodGuide: [
-      { name: "German Bakery", type: "Breakfast", specialty: "Pancakes", rating: 4.4 },
-      { name: "The Tides", type: "Luxury", specialty: "Seafood Platter", rating: 4.7 }
+      { name: "Saravana Bhavan", type: "City", specialty: "South Indian Veg", rating: 4.1 },
+      { name: "Rapsy Restaurant", type: "Budget", specialty: "Beef Fry & Parotta", rating: 4.3 }
     ],
 
     emergency: {
       police: "100",
       ambulance: "108",
-      touristHelpline: "1-800-425-4747",
-      nearestHospital: "KIMS Hospital, Trivandrum"
+      touristHelpline: "1800-425-4747",
+      nearestHospital: "Tata High Range Hospital"
+    }
+  },
+  {
+    id: 1304,
+    name: "Periyar National Park (Thekkady)",
+    slug: "periyar-national-park",
+    state: "Kerala",
+    category: "Wildlife",
+    badge: "Elephant & Tiger Reserve",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Periyar_Lake_Thekkady.jpg/800px-Periyar_Lake_Thekkady.jpg",
+    description: "A renowned wildlife sanctuary centered around Periyar Lake. Famous for boat safaris where herds of wild elephants can be seen playing by the water's edge.",
+    coordinates: { lat: 9.6031, lng: 77.1615 },
+
+    essentials: {
+      bestTime: "October to February",
+      weather: "Forest/Cool",
+      timings: "06:00 AM - 05:00 PM",
+      entryFee: {
+        Entry: "₹45",
+        BoatRide: "₹255 (Online booking mandatory)"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Madurai (140 km) or Cochin (190 km)",
+      nearestRailway: "Kottayam (110 km)",
+      busConnectivity: "Direct buses from Kumily/Thekkady"
+    },
+
+    externalLinks: {
+      officialBooking: "https://www.periyarfoundation.online/",
+      googleMaps: "https://goo.gl/maps/periyar"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Boat landing area is accessible via ramps. Wheelchair priority on boats."
+    },
+
+    routePlan: [
+      { time: "07:30 AM", activity: "Morning Boat Safari" },
+      { time: "11:00 AM", activity: "Spice Plantation Tour" },
+      { time: "06:00 PM", activity: "Kathakali & Kalaripayattu Show" }
+    ],
+
+    foodGuide: [
+      { name: "Bamboo Cafe", type: "Forest Dept", specialty: "Snacks", rating: 3.8 },
+      { name: "Grandma's Cafe", type: "City", specialty: "Homestyle Kerala Food", rating: 4.4 }
+    ],
+
+    emergency: {
+      police: "100",
+      ambulance: "108",
+      touristHelpline: "1800-425-4747",
+      nearestHospital: "Govt Hospital Kumily"
+    }
+  },
+  {
+    id: 1305,
+    name: "Wayanad (Edakkal Caves)",
+    slug: "wayanad-edakkal",
+    state: "Kerala",
+    category: "Nature",
+    badge: "Prehistoric Rock Art",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Edakkal_Caves_Wayanad.jpg/800px-Edakkal_Caves_Wayanad.jpg",
+    description: "A green paradise in the Western Ghats. The Edakkal Caves feature Stone Age carvings (Neolithic) dating back to 6000 BC, the only known place in India with Stone Age carvings.",
+    coordinates: { lat: 11.6280, lng: 76.2335 },
+
+    essentials: {
+      bestTime: "October to May",
+      weather: "Pleasant",
+      timings: "09:00 AM - 04:00 PM (Closed Mondays)",
+      entryFee: {
+        Entry: "₹40",
+        Jeep: "₹150 (From parking to base)"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Calicut (CCJ) - 100 km",
+      nearestRailway: "Kozhikode (90 km)",
+      busConnectivity: "Buses to Sultan Bathery, then local jeep"
+    },
+
+    externalLinks: {
+      officialBooking: "https://dtpcwayanad.com/",
+      googleMaps: "https://goo.gl/maps/edakkal"
+    },
+
+    accessibility: {
+      wheelchairFriendly: false,
+      notes: "Steep climb of ~1 km from base to caves. Not suitable for elderly/disabled."
+    },
+
+    routePlan: [
+      { time: "09:00 AM", activity: "Trek to Edakkal Caves" },
+      { time: "01:00 PM", activity: "Lunch at Sultan Bathery" },
+      { time: "03:00 PM", activity: "Banasura Sagar Dam" }
+    ],
+
+    foodGuide: [
+      { name: "Wilton Hotel", type: "City", specialty: "Kerala Meals & Biryani", rating: 4.3 },
+      { name: "1980's A Nostalgic Restaurant", type: "Theme", specialty: "Clay Pot Meals", rating: 4.5 }
+    ],
+
+    emergency: {
+      police: "100",
+      ambulance: "108",
+      touristHelpline: "1800-425-4747",
+      nearestHospital: "WIMS Hospital Meppadi"
     }
   },
 
-  // --- HERITAGE / SPIRITUAL ---
+  // --- HERITAGE & CULTURE ---
   {
-    id: 309,
+    id: 1306,
     name: "Fort Kochi",
+    slug: "fort-kochi",
     state: "Kerala",
     category: "Heritage",
-    badge: "Colonial History",
-    // Wikimedia: Chinese Fishing Nets
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Chinese_Fishing_Nets%2C_Cochin.jpg/800px-Chinese_Fishing_Nets%2C_Cochin.jpg",
-    description: "Fort Kochi is a region in the city of Kochi known for its colonial charm. It has Dutch, Portuguese, and British style architecture. The iconic Chinese Fishing Nets are the most famous sight here.",
-    
+    badge: "Colonial History Hub",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Chinese_Fishing_Nets_Kochi.jpg/800px-Chinese_Fishing_Nets_Kochi.jpg",
+    description: "A historic neighborhood showcasing Portuguese, Dutch, and British influences. Famous for Chinese Fishing Nets, St. Francis Church (Vasco da Gama's first burial site), and art cafes.",
+    coordinates: { lat: 9.9658, lng: 76.2421 },
+
     essentials: {
-      bestTime: "October to March",
+      bestTime: "All Year (Biennale in Dec-Mar)",
       weather: "Humid",
-      entryFee: { Street: "Free", Synagogue: "₹10", Palace: "₹5" },
-      timings: "Synagogue: 10AM-1PM, 3PM-5PM (Closed Fri/Sat)"
+      timings: "24 Hours (Museums close 5 PM)",
+      entryFee: { Entry: "Free" }
+    },
+
+    transport: {
+      nearestAirport: "Cochin (40 km)",
+      nearestRailway: "Ernakulam South (12 km)",
+      busConnectivity: "Ferry from Ernakulam Jetty is the best scenic route"
+    },
+
+    externalLinks: {
+      officialBooking: "https://www.keralatourism.org/",
+      googleMaps: "https://goo.gl/maps/fortkochi"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Streets are flat and paved. Most heritage sites have ground level access."
     },
 
     routePlan: [
-      { time: "09:00 AM", activity: "St. Francis Church (Vasco da Gama)" },
-      { time: "10:30 AM", activity: "Mattancherry Palace (Dutch Palace)" },
-      { time: "05:30 PM", activity: "Sunset at Chinese Fishing Nets" }
+      { time: "09:00 AM", activity: "Chinese Fishing Nets" },
+      { time: "10:30 AM", activity: "St. Francis Church & Dutch Palace" },
+      { time: "04:00 PM", activity: "Jew Town & Synagogue" }
     ],
 
     foodGuide: [
-      { name: "Kashi Art Cafe", type: "Cafe", specialty: "Chocolate Cake & Coffee", rating: 4.7 },
-      { name: "Dal Roti", type: "North Indian", specialty: "Kathi Rolls", rating: 4.6 }
+      { name: "Kashi Art Cafe", type: "Cafe", specialty: "Cake & Coffee", rating: 4.6 },
+      { name: "Fusion Bay", type: "Restaurant", specialty: "Seafood Platter", rating: 4.4 }
     ],
 
     emergency: {
       police: "100",
       ambulance: "108",
-      touristHelpline: "1-800-425-4747",
-      nearestHospital: "Gautham Hospital, Kochi"
+      touristHelpline: "1800-425-4747",
+      nearestHospital: "General Hospital Ernakulam"
     }
   },
   {
-    id: 310,
-    name: "Padmanabhaswamy Temple",
+    id: 1307,
+    name: "Sree Padmanabhaswamy Temple",
+    slug: "padmanabhaswamy-temple",
     state: "Kerala",
     category: "Spiritual",
     badge: "Richest Temple in World",
-    // Wikimedia: Temple Gopuram
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Sree_Padmanabhaswamy_Temple%2C_Thiruvananthapuram.jpg/800px-Sree_Padmanabhaswamy_Temple%2C_Thiruvananthapuram.jpg",
-    description: "Located in Thiruvananthapuram, this is a fusion of Kerala and Dravidian style architecture. It is the richest place of worship in the world. Strict dress code: Men must wear Mundu (Dhoti) and bare chest; Women must wear Saree/Set Mundu.",
-    
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sree_Padmanabhaswamy_Temple_Trivandrum.jpg/800px-Sree_Padmanabhaswamy_Temple_Trivandrum.jpg",
+    description: "Located in Trivandrum, this temple dedicated to Lord Vishnu features a massive Gopuram and is famous for its secret vaults containing immense wealth. Strict dress code applies.",
+    coordinates: { lat: 8.4830, lng: 76.9436 },
+
     essentials: {
-      bestTime: "Year Round",
-      weather: "Humid",
-      entryFee: { Entry: "Free", SpecialDarshan: "₹150-500" },
-      timings: "3:30AM-12PM, 5PM-8:30PM (Strict Intervals)"
+      bestTime: "All Year",
+      weather: "Tropical",
+      timings: "03:30 AM - 12:00 PM, 05:00 PM - 08:30 PM",
+      entryFee: {
+        Entry: "Free",
+        SpecialDarshan: "₹250",
+        DressCode: "Mundu/Saree Mandatory"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Trivandrum (4 km)",
+      nearestRailway: "Trivandrum Central (1 km)",
+      busConnectivity: "Located in city center (East Fort)"
+    },
+
+    externalLinks: {
+      officialBooking: "https://spst.in/",
+      googleMaps: "https://goo.gl/maps/padmanabhaswamy"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Wheelchairs permitted in outer corridors. Main sanctum requires walking."
     },
 
     routePlan: [
-      { time: "06:00 AM", activity: "Nirmalya Darshan (Early Morning)" },
-      { time: "08:00 AM", activity: "Visit Kuthiramalika Palace Museum nearby" },
-      { time: "10:00 AM", activity: "Napier Museum & Zoo" }
+      { time: "06:00 AM", activity: "Nirmalyam Darshan" },
+      { time: "08:00 AM", activity: "Kuthiramalika Palace Museum (Next door)" },
+      { time: "10:00 AM", activity: "Napier Museum & Zoo (Nearby)" }
     ],
 
     foodGuide: [
-      { name: "Mothers Veg Plaza", type: "Vegetarian", specialty: "Sadhya (Feast)", rating: 4.8 },
-      { name: "Villa Maya", type: "Heritage Luxury", specialty: "Kerala Cuisine", rating: 4.7 }
+      { name: "Mothers Veg Plaza", type: "City", specialty: "Sadya (Feast)", rating: 4.7 },
+      { name: "Villa Maya", type: "Heritage", specialty: "Fine Dining", rating: 4.6 }
     ],
 
     emergency: {
       police: "100",
       ambulance: "108",
-      touristHelpline: "1-800-425-4747",
-      nearestHospital: "Fort Hospital, Trivandrum"
+      touristHelpline: "1800-425-4747",
+      nearestHospital: "Medical College Trivandrum"
+    }
+  },
+
+  // --- NATURE & FALLS ---
+  {
+    id: 1308,
+    name: "Athirapally Waterfalls",
+    slug: "athirapally-waterfalls",
+    state: "Kerala",
+    category: "Nature",
+    badge: "Niagara of India",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Athirappilly_Waterfalls_Thrissur.jpg/800px-Athirappilly_Waterfalls_Thrissur.jpg",
+    description: "The largest waterfall in Kerala, standing 80ft tall. Located on the Chalakudy River, it is a popular film shooting location (Bahubali) surrounded by lush rainforests.",
+    coordinates: { lat: 10.2851, lng: 76.5698 },
+
+    essentials: {
+      bestTime: "June to October (Monsoon)",
+      weather: "Humid/Spray",
+      timings: "08:00 AM - 06:00 PM",
+      entryFee: {
+        Entry: "₹50",
+        Parking: "₹50"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Cochin (55 km)",
+      nearestRailway: "Chalakudy (30 km)",
+      busConnectivity: "Buses from Chalakudy bus stand"
+    },
+
+    externalLinks: {
+      officialBooking: "https://www.keralatourism.org/",
+      googleMaps: "https://goo.gl/maps/athirapally"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Top viewpoint is wheelchair accessible via paved path. Bottom of falls requires steep hike."
+    },
+
+    routePlan: [
+      { time: "09:00 AM", activity: "Top Viewpoint" },
+      { time: "10:30 AM", activity: "Trek to Waterfall Base" },
+      { time: "01:00 PM", activity: "Vazhachal Falls (5km away)" }
+    ],
+
+    foodGuide: [
+      { name: "Rainforest Resort", type: "View", specialty: "Lunch with Waterfall View", rating: 4.5 },
+      { name: "Local Stalls", type: "Street", specialty: "Bamboo Rice Payasam", rating: 4.0 }
+    ],
+
+    emergency: {
+      police: "100",
+      ambulance: "108",
+      touristHelpline: "1800-425-4747",
+      nearestHospital: "St. James Hospital Chalakudy"
+    }
+  },
+  {
+    id: 1309,
+    name: "Bekal Fort",
+    slug: "bekal-fort",
+    state: "Kerala",
+    category: "Heritage",
+    badge: "Largest Fort in Kerala",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Bekal_Fort_Kasaragod.jpg/800px-Bekal_Fort_Kasaragod.jpg",
+    description: "A massive 17th-century keyhole-shaped fort in Kasaragod, offering panoramic views of the Arabian Sea. Unlike other forts, it was built solely for defense, not administration.",
+    coordinates: { lat: 12.3837, lng: 75.0336 },
+
+    essentials: {
+      bestTime: "August to March",
+      weather: "Coastal",
+      timings: "08:00 AM - 05:30 PM",
+      entryFee: {
+        Indian: "₹25",
+        Foreigner: "₹300"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Mangalore (50 km)",
+      nearestRailway: "Bekal Fort (1 km) or Kasaragod (16 km)",
+      busConnectivity: "Local buses from Kanhangad or Kasaragod"
+    },
+
+    externalLinks: {
+      officialBooking: "https://asi.payumoney.com/",
+      googleMaps: "https://goo.gl/maps/bekal"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "Wide ramps available to reach the observation decks. Grass lawns are flat."
+    },
+
+    routePlan: [
+      { time: "04:00 PM", activity: "Fort Walk & Observation Tower" },
+      { time: "05:30 PM", activity: "Sunset at Bekal Beach" },
+      { time: "06:30 PM", activity: "Park Light Show" }
+    ],
+
+    foodGuide: [
+      { name: "Nombili", type: "Resort", specialty: "Malabar Cuisine", rating: 4.6 }
+    ],
+
+    emergency: {
+      police: "100",
+      ambulance: "108",
+      touristHelpline: "1800-425-4747",
+      nearestHospital: "District Hospital Kanhangad"
+    }
+  },
+  {
+    id: 1310,
+    name: "Kovalam Beach",
+    slug: "kovalam-beach",
+    state: "Kerala",
+    category: "Beaches",
+    badge: "Lighthouse Beach",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Kovalam_Lighthouse_Beach.jpg/800px-Kovalam_Lighthouse_Beach.jpg",
+    description: "An internationally renowned beach with three adjacent crescent beaches. The Lighthouse Beach is famous for its 35m tall lighthouse and strong waves suitable for surfing.",
+    coordinates: { lat: 8.4004, lng: 76.9787 },
+
+    essentials: {
+      bestTime: "September to March",
+      weather: "Sunny/Humid",
+      timings: "24 Hours (Lighthouse: 10 AM - 5 PM, closed Mon)",
+      entryFee: {
+        Beach: "Free",
+        Lighthouse: "₹20"
+      }
+    },
+
+    transport: {
+      nearestAirport: "Trivandrum (15 km)",
+      nearestRailway: "Trivandrum Central (15 km)",
+      busConnectivity: "Frequent AC Low-floor buses from Trivandrum city"
+    },
+
+    externalLinks: {
+      officialBooking: "https://www.keralatourism.org/",
+      googleMaps: "https://goo.gl/maps/kovalam"
+    },
+
+    accessibility: {
+      wheelchairFriendly: true,
+      notes: "The promenade is paved and wheelchair friendly. Lighthouse has an elevator."
+    },
+
+    routePlan: [
+      { time: "04:00 PM", activity: "Climb Lighthouse" },
+      { time: "05:00 PM", activity: "Swimming / Surfing" },
+      { time: "07:00 PM", activity: "Seafood Dinner by the Beach" }
+    ],
+
+    foodGuide: [
+      { name: "German Bakery", type: "Cafe", specialty: "Breakfast & Shakes", rating: 4.4 },
+      { name: "Bait", type: "Luxury", specialty: "Fresh Catch", rating: 4.7 }
+    ],
+
+    emergency: {
+      police: "100",
+      ambulance: "108",
+      touristHelpline: "1800-425-4747",
+      nearestHospital: "Upasana Hospital"
     }
   }
-];
+]; 
