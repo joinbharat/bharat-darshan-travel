@@ -1,5 +1,5 @@
 /**
- * RAJASTHAN_PLACES DATASET
+ * RAJASTHAN_PLACES DATASET - COMPREHENSIVE
  * ------------------------------------------------------------------
  * Sources:
  * - Timings/Fees: Dept of Archaeology & Museums, Rajasthan & ASI
@@ -10,561 +10,387 @@
  */
 
 export const RAJASTHAN_PLACES = [
-  // --- HERITAGE & FORTS ---
+  // --- JAIPUR (The Pink City) ---
   {
     id: 2201,
     name: "Amber Fort (Amer)",
     slug: "amber-fort-jaipur",
-    state: "Rajasthan",
+    state: "Jaipur, Rajasthan",
     category: "Heritage",
     badge: "UNESCO World Heritage",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Amber_Fort_Jaipur.jpg/800px-Amber_Fort_Jaipur.jpg",
     description: "A majestic hilltop fort built in 1592 by Raja Man Singh. Famous for its artistic Hindu style elements, the Sheesh Mahal (Mirror Palace), and the elephant ride up the ramparts.",
     coordinates: { lat: 26.9855, lng: 75.8513 },
-
     essentials: {
       bestTime: "October to March",
       weather: "Sunny/Hot",
-      timings: "08:00 AM - 05:30 PM (Night Viewing: 6:30 PM - 9:15 PM)",
-      entryFee: {
-        Indian: "₹100",
-        Foreigner: "₹500",
-        LightShow: "₹295 (English)"
-      }
+      timings: "08:00 AM - 05:30 PM (Night: 6:30-9:15 PM)",
+      entryFee: { Indian: "₹100", Foreigner: "₹500", LightShow: "₹295" }
     },
-
-    transport: {
-      nearestAirport: "Jaipur (25 km)",
-      nearestRailway: "Jaipur Junction (12 km)",
-      busConnectivity: "AC Low Floor buses from Hawa Mahal/Ajmeri Gate"
-    },
-
-    externalLinks: {
-      officialBooking: "https://www.rajasthantourism.gov.in/",
-      googleMaps: "https://goo.gl/maps/amberfort"
-    },
-
-    accessibility: {
-      wheelchairFriendly: true,
-      notes: "Golf carts available at the rear entrance for elderly/disabled. Main courtyard is paved."
-    },
-
-    routePlan: [
-      { time: "08:00 AM", activity: "Elephant/Jeep Ride to Top" },
-      { time: "09:30 AM", activity: "Sheesh Mahal & Ganesh Pol" },
-      { time: "11:30 AM", activity: "Jaigarh Fort Tunnel Walk (Nearby)" }
-    ],
-
-    foodGuide: [
-      { name: "1135 AD", type: "Fine Dining", specialty: "Royal Rajasthani Thali", rating: 4.7 },
-      { name: "Surabhi Restaurant", type: "Family", specialty: "Laal Maas", rating: 4.3 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1800-103-3500",
-      nearestHospital: "SMS Hospital Jaipur"
-    }
+    transport: { nearestAirport: "Jaipur (25 km)", nearestRailway: "Jaipur Jn (12 km)", busConnectivity: "AC buses from Hawa Mahal" },
+    externalLinks: { officialBooking: "https://www.rajasthantourism.gov.in/", googleMaps: "https://goo.gl/maps/amberfort" },
+    accessibility: { wheelchairFriendly: true, notes: "Golf carts available." },
+    routePlan: [ { time: "08:00 AM", activity: "Elephant Ride" }, { time: "09:30 AM", activity: "Sheesh Mahal" } ],
+    foodGuide: [ { name: "1135 AD", type: "Fine Dining", specialty: "Royal Thali", rating: 4.7 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "SMS Hospital" }
   },
   {
-    id: 2202,
-    name: "Mehrangarh Fort",
-    slug: "mehrangarh-fort-jodhpur",
-    state: "Rajasthan",
+    id: 2211,
+    name: "Hawa Mahal",
+    slug: "hawa-mahal",
+    state: "Jaipur, Rajasthan",
     category: "Heritage",
-    badge: "The Citadel of the Sun",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Mehrangarh_Fort_Jodhpur_View.jpg/800px-Mehrangarh_Fort_Jodhpur_View.jpg",
-    description: "One of the largest forts in India, rising 410 feet above the city of Jodhpur. It houses one of the best-stocked museums in Rajasthan, displaying royal palanquins and armory.",
-    coordinates: { lat: 26.2975, lng: 73.0185 },
-
-    essentials: {
-      bestTime: "October to March",
-      weather: "Dry/Desert",
-      timings: "09:00 AM - 05:00 PM",
-      entryFee: {
-        Indian: "₹200",
-        Foreigner: "₹600",
-        Elevator: "₹50 (Optional)"
-      }
-    },
-
-    transport: {
-      nearestAirport: "Jodhpur (10 km)",
-      nearestRailway: "Jodhpur Junction (5 km)",
-      busConnectivity: "Auto-rickshaws available from Old City"
-    },
-
-    externalLinks: {
-      officialBooking: "https://www.mehrangarh.org/",
-      googleMaps: "https://goo.gl/maps/mehrangarh"
-    },
-
-    accessibility: {
-      wheelchairFriendly: true,
-      notes: "Elevator available to reach the top levels. Most museum galleries are accessible."
-    },
-
-    routePlan: [
-      { time: "09:00 AM", activity: "Fort Museum & Palaces" },
-      { time: "12:00 PM", activity: "Chamunda Mata Temple" },
-      { time: "04:00 PM", activity: "Zip Lining (Flying Fox)" }
-    ],
-
-    foodGuide: [
-      { name: "Chokelao Mahal", type: "Fort Terrace", specialty: "Gatte ki Sabzi", rating: 4.5 },
-      { name: "Janta Sweets", type: "City", specialty: "Mirchi Bada & Makhaniya Lassi", rating: 4.8 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1800-103-3500",
-      nearestHospital: "MG Hospital Jodhpur"
-    }
+    badge: "Palace of Winds",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Hawa_Mahal_2011.jpg/800px-Hawa_Mahal_2011.jpg",
+    description: "Built in 1799, this five-story structure with 953 small windows (Jharokhas) was designed to allow royal ladies to observe street festivals without being seen.",
+    coordinates: { lat: 26.9239, lng: 75.8267 },
+    essentials: { bestTime: "All Year", weather: "City", timings: "09:00 AM - 04:30 PM", entryFee: { Indian: "₹50", Foreigner: "₹200" } },
+    transport: { nearestAirport: "Jaipur (12 km)", nearestRailway: "Jaipur Jn (5 km)", busConnectivity: "Badi Choupad" },
+    externalLinks: { officialBooking: "https://www.rajasthantourism.gov.in/", googleMaps: "https://goo.gl/maps/hawamahal" },
+    accessibility: { wheelchairFriendly: false, notes: "Narrow ramps and steps." },
+    routePlan: [ { time: "10:00 AM", activity: "View Jharokhas" }, { time: "11:00 AM", activity: "Shop at Bapu Bazaar" } ],
+    foodGuide: [ { name: "Tattoo Cafe", type: "View", specialty: "Coffee with View", rating: 4.5 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "Gangauri Hospital" }
   },
+  {
+    id: 2212,
+    name: "City Palace, Jaipur",
+    slug: "city-palace-jaipur",
+    state: "Jaipur, Rajasthan",
+    category: "Heritage",
+    badge: "Royal Residence",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/City_Palace_Jaipur_Chandra_Mahal.jpg/800px-City_Palace_Jaipur_Chandra_Mahal.jpg",
+    description: "A stunning blend of Mughal and Rajasthani architecture. It houses the Chandra Mahal (where the royal family still lives) and the Mubarak Mahal museum.",
+    coordinates: { lat: 26.9258, lng: 75.8237 },
+    essentials: { bestTime: "Winter", weather: "City", timings: "09:30 AM - 05:00 PM", entryFee: { Indian: "₹200", Foreigner: "₹700" } },
+    transport: { nearestAirport: "Jaipur (13 km)", nearestRailway: "Jaipur Jn (5 km)", busConnectivity: "Jaleb Chowk" },
+    externalLinks: { officialBooking: "https://citypalacejaipur.com/", googleMaps: "https://goo.gl/maps/citypalacejpr" },
+    accessibility: { wheelchairFriendly: true, notes: "Flat courtyards." },
+    routePlan: [ { time: "01:00 PM", activity: "Museum" }, { time: "03:00 PM", activity: "Pritam Niwas Chowk" } ],
+    foodGuide: [ { name: "Baradari", type: "Inside Palace", specialty: "Fusion", rating: 4.6 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "SMS Hospital" }
+  },
+  {
+    id: 2213,
+    name: "Jantar Mantar",
+    slug: "jantar-mantar-jaipur",
+    state: "Jaipur, Rajasthan",
+    category: "Heritage",
+    badge: "UNESCO Astronomy Park",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Samrat_Yantra_Jantar_Mantar_Jaipur.jpg/800px-Samrat_Yantra_Jantar_Mantar_Jaipur.jpg",
+    description: "The world's largest stone astronomical observatory, featuring the world's largest sundial. Built by Maharaja Sawai Jai Singh II in the 18th century.",
+    coordinates: { lat: 26.9248, lng: 75.8246 },
+    essentials: { bestTime: "Noon (For Shadows)", weather: "Open Sun", timings: "09:00 AM - 04:30 PM", entryFee: { Indian: "₹50", Foreigner: "₹200" } },
+    transport: { nearestAirport: "Jaipur (13 km)", nearestRailway: "Jaipur Jn (5 km)", busConnectivity: "Near City Palace" },
+    externalLinks: { officialBooking: "https://www.rajasthantourism.gov.in/", googleMaps: "https://goo.gl/maps/jantar" },
+    accessibility: { wheelchairFriendly: true, notes: "Paved pathways throughout." },
+    routePlan: [ { time: "12:00 PM", activity: "Check Sundial Time" }, { time: "01:00 PM", activity: "Audio Guide Tour" } ],
+    foodGuide: [ { name: "LMB", type: "Heritage", specialty: "Ghewar", rating: 4.4 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "SMS Hospital" }
+  },
+
+  // --- UDAIPUR (City of Lakes) ---
   {
     id: 2203,
     name: "City Palace, Udaipur",
     slug: "city-palace-udaipur",
-    state: "Rajasthan",
+    state: "Udaipur, Rajasthan",
     category: "Heritage",
     badge: "Largest Palace in Rajasthan",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/City_Palace_Udaipur.jpg/800px-City_Palace_Udaipur.jpg",
     description: "A monumental complex of 11 palaces sitting on the banks of Lake Pichola. It is a fusion of Rajasthani and Mughal architecture, offering stunning views of the Lake Palace.",
     coordinates: { lat: 24.5764, lng: 73.6835 },
-
     essentials: {
       bestTime: "September to March",
       weather: "Pleasant",
       timings: "09:30 AM - 05:30 PM",
-      entryFee: {
-        Adult: "₹400",
-        Student: "₹100",
-        Museum: "Included"
-      }
+      entryFee: { Adult: "₹400", Student: "₹100" }
     },
-
-    transport: {
-      nearestAirport: "Maharana Pratap Airport (24 km)",
-      nearestRailway: "Udaipur City (3 km)",
-      busConnectivity: "Walkable from Jagdish Temple"
-    },
-
-    externalLinks: {
-      officialBooking: "https://citypalacemuseum.org/",
-      googleMaps: "https://goo.gl/maps/citypalaceudaipur"
-    },
-
-    accessibility: {
-      wheelchairFriendly: true,
-      notes: "Ramps and elevators available for the main museum areas. Some narrow corridors exist."
-    },
-
-    routePlan: [
-      { time: "09:30 AM", activity: "Palace Museum Tour" },
-      { time: "11:30 AM", activity: "Crystal Gallery" },
-      { time: "04:00 PM", activity: "Boat Ride on Lake Pichola" }
-    ],
-
-    foodGuide: [
-      { name: "Ambrai", type: "Lakeside", specialty: "Mewari Cuisine", rating: 4.6 },
-      { name: "Natraj Dining Hall", type: "City", specialty: "Unlimited Thali", rating: 4.5 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1800-103-3500",
-      nearestHospital: "MB Govt Hospital"
-    }
+    transport: { nearestAirport: "Maharana Pratap Airport (24 km)", nearestRailway: "Udaipur City (3 km)", busConnectivity: "Jagdish Temple" },
+    externalLinks: { officialBooking: "https://citypalacemuseum.org/", googleMaps: "https://goo.gl/maps/citypalaceudaipur" },
+    accessibility: { wheelchairFriendly: true, notes: "Ramps/Elevators in museum." },
+    routePlan: [ { time: "09:30 AM", activity: "Museum Tour" }, { time: "11:30 AM", activity: "Crystal Gallery" } ],
+    foodGuide: [ { name: "Ambrai", type: "Lakeside", specialty: "Mewari Cuisine", rating: 4.6 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "MB Govt Hospital" }
   },
+  {
+    id: 2214,
+    name: "Lake Pichola",
+    slug: "lake-pichola",
+    state: "Udaipur, Rajasthan",
+    category: "Nature",
+    badge: "Iconic Lake",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Lake_Pichola_Udaipur.jpg/800px-Lake_Pichola_Udaipur.jpg",
+    description: "An artificial freshwater lake created in 1362 AD. Famous for the Lake Palace (Jag Niwas) and Jag Mandir islands floating in its center.",
+    coordinates: { lat: 24.5713, lng: 73.6757 },
+    essentials: { bestTime: "Evening", weather: "Breezy", timings: "09:00 AM - 06:00 PM (Boating)", entryFee: { Boat: "₹400-800" } },
+    transport: { nearestAirport: "Udaipur (25 km)", nearestRailway: "Udaipur City (4 km)", busConnectivity: "City center" },
+    externalLinks: { officialBooking: "N/A", googleMaps: "https://goo.gl/maps/pichola" },
+    accessibility: { wheelchairFriendly: false, notes: "Steps to boat jetty." },
+    routePlan: [ { time: "04:30 PM", activity: "Sunset Boat Ride" }, { time: "06:00 PM", activity: "Dinner at Jag Mandir" } ],
+    foodGuide: [ { name: "Upre", type: "Rooftop", specialty: "Laal Maas", rating: 4.5 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "MB Hospital" }
+  },
+
+  // --- JODHPUR (The Blue City) ---
+  {
+    id: 2202,
+    name: "Mehrangarh Fort",
+    slug: "mehrangarh-fort-jodhpur",
+    state: "Jodhpur, Rajasthan",
+    category: "Heritage",
+    badge: "Citadel of the Sun",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Mehrangarh_Fort_Jodhpur_View.jpg/800px-Mehrangarh_Fort_Jodhpur_View.jpg",
+    description: "One of the largest forts in India, rising 410 feet above the city. It houses one of the best-stocked museums in Rajasthan and offers blue city views.",
+    coordinates: { lat: 26.2975, lng: 73.0185 },
+    essentials: { bestTime: "Winter", weather: "Desert", timings: "09:00 AM - 05:00 PM", entryFee: { Indian: "₹200", Foreigner: "₹600" } },
+    transport: { nearestAirport: "Jodhpur (10 km)", nearestRailway: "Jodhpur Jn (5 km)", busConnectivity: "Auto from Old City" },
+    externalLinks: { officialBooking: "https://www.mehrangarh.org/", googleMaps: "https://goo.gl/maps/mehrangarh" },
+    accessibility: { wheelchairFriendly: true, notes: "Elevator available." },
+    routePlan: [ { time: "09:00 AM", activity: "Museum" }, { time: "04:00 PM", activity: "Zip Lining" } ],
+    foodGuide: [ { name: "Chokelao Mahal", type: "Fort Terrace", specialty: "Gatte ki Sabzi", rating: 4.5 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "MG Hospital" }
+  },
+  {
+    id: 2215,
+    name: "Umaid Bhawan Palace",
+    slug: "umaid-bhawan",
+    state: "Jodhpur, Rajasthan",
+    category: "Heritage",
+    badge: "World's Largest Private Residence",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Umaid_Bhawan_Palace_Jodhpur.jpg/800px-Umaid_Bhawan_Palace_Jodhpur.jpg",
+    description: "A magnificent piece of Rajasthan's heritage, part hotel, part museum, and part royal residence. Built with golden-yellow sandstone.",
+    coordinates: { lat: 26.2808, lng: 73.0470 },
+    essentials: { bestTime: "All Year", weather: "Luxury", timings: "10:00 AM - 04:30 PM (Museum)", entryFee: { Indian: "₹30", Foreigner: "₹100" } },
+    transport: { nearestAirport: "Jodhpur (5 km)", nearestRailway: "Jodhpur Jn (6 km)", busConnectivity: "Taxi required" },
+    externalLinks: { officialBooking: "N/A", googleMaps: "https://goo.gl/maps/umaid" },
+    accessibility: { wheelchairFriendly: true, notes: "Museum is accessible." },
+    routePlan: [ { time: "10:00 AM", activity: "Vintage Car Museum" }, { time: "11:00 AM", activity: "Palace Museum" } ],
+    foodGuide: [ { name: "Pillars", type: "Luxury", specialty: "High Tea", rating: 4.8 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "Goyal Hospital" }
+  },
+
+  // --- JAISALMER (The Golden City) ---
   {
     id: 2204,
     name: "Jaisalmer Fort",
     slug: "jaisalmer-fort",
-    state: "Rajasthan",
+    state: "Jaisalmer, Rajasthan",
     category: "Heritage",
-    badge: "The Golden Living Fort",
+    badge: "Living Golden Fort",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Jaisalmer_Fort_Night_View.jpg/800px-Jaisalmer_Fort_Night_View.jpg",
-    description: "A UNESCO World Heritage site made of yellow sandstone, glowing gold at sunset. It is one of the few 'living forts' in the world, with thousands of people residing within its walls.",
+    description: "A UNESCO World Heritage site made of yellow sandstone. It is one of the few 'living forts' in the world, with thousands of people residing within its walls.",
     coordinates: { lat: 26.9124, lng: 70.9127 },
-
-    essentials: {
-      bestTime: "November to February",
-      weather: "Desert/Cold Nights",
-      timings: "24 Hours (Fort Entry), 9-6 (Palace Museum)",
-      entryFee: {
-        FortEntry: "Free",
-        PalaceMuseum: "₹250",
-        Camera: "₹50"
-      }
-    },
-
-    transport: {
-      nearestAirport: "Jaisalmer Airport (12 km) - Limited Flights",
-      nearestRailway: "Jaisalmer (2 km)",
-      busConnectivity: "Auto-rickshaws available from station"
-    },
-
-    externalLinks: {
-      officialBooking: "https://tourism.rajasthan.gov.in/",
-      googleMaps: "https://goo.gl/maps/jaisalmerfort"
-    },
-
-    accessibility: {
-      wheelchairFriendly: false,
-      notes: "Steep cobblestone paths. Very difficult for wheelchairs. Tuk-tuks can go up to the main square."
-    },
-
-    routePlan: [
-      { time: "09:00 AM", activity: "Jain Temples (Inside Fort)" },
-      { time: "11:00 AM", activity: "Fort Palace Museum" },
-      { time: "05:00 PM", activity: "Sunset at Vyas Chhatri" }
-    ],
-
-    foodGuide: [
-      { name: "Jaisal Italy", type: "Fort View", specialty: "Pasta & Pizza", rating: 4.4 },
-      { name: "Dhanraj Ranmal", type: "Sweet Shop", specialty: "Ghotua Ladoo", rating: 4.7 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1800-103-3500",
-      nearestHospital: "Jawahar Hospital"
-    }
-  },
-
-  // --- WILDLIFE ---
-  {
-    id: 2205,
-    name: "Ranthambore National Park",
-    slug: "ranthambore-national-park",
-    state: "Rajasthan",
-    category: "Wildlife",
-    badge: "Royal Bengal Tiger Habitat",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Tiger_in_Ranthambhore.jpg/800px-Tiger_in_Ranthambhore.jpg",
-    description: "A former royal hunting ground, famous for its diurnally active tigers. The park is dotted with ancient ruins, including the 10th-century Ranthambore Fort.",
-    coordinates: { lat: 26.0173, lng: 76.5026 },
-
-    essentials: {
-      bestTime: "October to June (Zones 1-5 best for Tigers)",
-      weather: "Forest",
-      timings: "06:30 AM - 10:00 AM, 02:30 PM - 06:00 PM",
-      entryFee: {
-        Canter: "₹800-1000",
-        Gypsy: "₹1500-1800",
-        Booking: "FMDSS Online Mandatory"
-      }
-    },
-
-    transport: {
-      nearestAirport: "Jaipur (180 km)",
-      nearestRailway: "Sawai Madhopur (14 km)",
-      busConnectivity: "Local buses/autos from Sawai Madhopur town"
-    },
-
-    externalLinks: {
-      officialBooking: "https://fmdss.forest.rajasthan.gov.in/",
-      googleMaps: "https://goo.gl/maps/ranthambore"
-    },
-
-    accessibility: {
-      wheelchairFriendly: false,
-      notes: "Safari vehicles (Canters/Gypsies) require climbing steps."
-    },
-
-    routePlan: [
-      { time: "06:30 AM", activity: "Morning Jungle Safari" },
-      { time: "11:00 AM", activity: "Visit Ranthambore Fort (Trinetra Ganesh)" },
-      { time: "03:00 PM", activity: "Afternoon Safari (Different Zone)" }
-    ],
-
-    foodGuide: [
-      { name: "Manisha Restaurant", type: "Local", specialty: "Dal Baati Churma", rating: 4.0 },
-      { name: "Oberoi Vanyavilas", type: "Luxury", specialty: "Fine Dining", rating: 4.8 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1800-103-3500",
-      nearestHospital: "General Hospital Sawai Madhopur"
-    }
+    essentials: { bestTime: "Nov-Feb", weather: "Desert", timings: "24 Hours", entryFee: { FortEntry: "Free", Museum: "₹250" } },
+    transport: { nearestAirport: "Jaisalmer (12 km)", nearestRailway: "Jaisalmer (2 km)", busConnectivity: "Auto from station" },
+    externalLinks: { officialBooking: "https://tourism.rajasthan.gov.in/", googleMaps: "https://goo.gl/maps/jaisalmerfort" },
+    accessibility: { wheelchairFriendly: false, notes: "Steep cobblestones." },
+    routePlan: [ { time: "09:00 AM", activity: "Jain Temples" }, { time: "05:00 PM", activity: "Sunset View" } ],
+    foodGuide: [ { name: "Jaisal Italy", type: "Fort View", specialty: "Pasta", rating: 4.4 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "Jawahar Hospital" }
   },
   {
-    id: 2206,
-    name: "Keoladeo National Park (Bharatpur)",
-    slug: "keoladeo-national-park",
-    state: "Rajasthan",
+    id: 2216,
+    name: "Sam Sand Dunes",
+    slug: "sam-sand-dunes",
+    state: "Jaisalmer, Rajasthan",
     category: "Nature",
-    badge: "UNESCO World Heritage Bird Sanctuary",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Painted_Storks_Bharatpur.jpg/800px-Painted_Storks_Bharatpur.jpg",
-    description: "Formerly known as the Bharatpur Bird Sanctuary, it hosts thousands of birds, especially during the winter migration. It is a man-made wetland and a haven for ornithologists.",
-    coordinates: { lat: 27.1593, lng: 77.5232 },
-
-    essentials: {
-      bestTime: "August to February (Migratory season)",
-      weather: "Cool/Wetland",
-      timings: "06:00 AM - 06:00 PM",
-      entryFee: {
-        Indian: "₹75",
-        Foreigner: "₹500",
-        Rickshaw: "₹150/hr (Govt rates)"
-      }
-    },
-
-    transport: {
-      nearestAirport: "Agra (55 km) or Delhi (180 km)",
-      nearestRailway: "Bharatpur Junction (5 km)",
-      busConnectivity: "Auto/Cycle Rickshaw from station"
-    },
-
-    externalLinks: {
-      officialBooking: "https://fmdss.forest.rajasthan.gov.in/",
-      googleMaps: "https://goo.gl/maps/keoladeo"
-    },
-
-    accessibility: {
-      wheelchairFriendly: true,
-      notes: "The main path is paved for 10km. Cycle rickshaws can accommodate folded wheelchairs."
-    },
-
-    routePlan: [
-      { time: "07:00 AM", activity: "Cycle Rickshaw Bird Tour" },
-      { time: "10:00 AM", activity: "Boat Ride in Wetlands" },
-      { time: "01:00 PM", activity: "Visit Lohagarh Fort (City)" }
-    ],
-
-    foodGuide: [
-      { name: "Laxmi Vilas Palace", type: "Heritage", specialty: "Rajasthani Thali", rating: 4.3 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1800-103-3500",
-      nearestHospital: "RBM Hospital Bharatpur"
-    }
+    badge: "Desert Safari",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Sam_Sand_Dunes_Jaisalmer.jpg/800px-Sam_Sand_Dunes_Jaisalmer.jpg",
+    description: "The classic Thar Desert experience with vast rolling dunes. Famous for camel safaris, jeep bashing, and cultural folk nights under the stars.",
+    coordinates: { lat: 26.8373, lng: 70.5019 },
+    essentials: { bestTime: "Nov-Mar (Evening)", weather: "Desert", timings: "04:00 PM - 10:00 PM", entryFee: { Entry: "Free", Safari: "₹500+" } },
+    transport: { nearestAirport: "Jaisalmer (55 km)", nearestRailway: "Jaisalmer (40 km)", busConnectivity: "Taxi/Jeep from city" },
+    externalLinks: { officialBooking: "N/A", googleMaps: "https://goo.gl/maps/samsand" },
+    accessibility: { wheelchairFriendly: false, notes: "Soft sand." },
+    routePlan: [ { time: "05:00 PM", activity: "Camel Safari" }, { time: "07:30 PM", activity: "Kalbelia Dance" } ],
+    foodGuide: [ { name: "Desert Camps", type: "Camp", specialty: "Buffet Dinner", rating: 4.2 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "Jawahar Hospital" }
   },
 
-  // --- SPIRITUAL & HILL STATION ---
+  // --- BIKANER ---
+  {
+    id: 2217,
+    name: "Karni Mata Temple",
+    slug: "karni-mata-deshnoke",
+    state: "Bikaner, Rajasthan",
+    category: "Spiritual",
+    badge: "Temple of Rats",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Karni_Mata_Temple_Rats.jpg/800px-Karni_Mata_Temple_Rats.jpg",
+    description: "A unique temple in Deshnoke where 25,000 black rats are revered and protected. Seeing a white rat is considered extremely lucky.",
+    coordinates: { lat: 27.7911, lng: 73.3409 },
+    essentials: { bestTime: "All Year", weather: "Dry", timings: "04:00 AM - 10:00 PM", entryFee: { Entry: "Free" } },
+    transport: { nearestAirport: "Bikaner (30 km)", nearestRailway: "Bikaner Jn (30 km)", busConnectivity: "Bus/Taxi to Deshnoke" },
+    externalLinks: { officialBooking: "N/A", googleMaps: "https://goo.gl/maps/karnimata" },
+    accessibility: { wheelchairFriendly: true, notes: "Ramps available." },
+    routePlan: [ { time: "08:00 AM", activity: "Darshan" }, { time: "09:00 AM", activity: "Find White Rat" } ],
+    foodGuide: [ { name: "Local Dhabas", type: "Simple", specialty: "Kachori", rating: 4.0 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "PBM Hospital" }
+  },
+  {
+    id: 2218,
+    name: "Junagarh Fort",
+    slug: "junagarh-fort",
+    state: "Bikaner, Rajasthan",
+    category: "Heritage",
+    badge: "Unconquered Fort",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Junagarh_Fort_Bikaner.jpg/800px-Junagarh_Fort_Bikaner.jpg",
+    description: "A formidable fort that was never conquered. Unlike most forts in Rajasthan which are on hilltops, this one was built on the plains.",
+    coordinates: { lat: 28.0213, lng: 73.3183 },
+    essentials: { bestTime: "Winter", weather: "Dry", timings: "10:00 AM - 04:30 PM", entryFee: { Indian: "₹50", Foreigner: "₹300" } },
+    transport: { nearestAirport: "Bikaner (15 km)", nearestRailway: "Bikaner Jn (1.5 km)", busConnectivity: "Auto from station" },
+    externalLinks: { officialBooking: "https://junagarh.org/", googleMaps: "https://goo.gl/maps/junagarh" },
+    accessibility: { wheelchairFriendly: true, notes: "Elevators available." },
+    routePlan: [ { time: "10:30 AM", activity: "Museum Tour" }, { time: "12:00 PM", activity: "Badal Mahal" } ],
+    foodGuide: [ { name: "Gallops", type: "Restaurant", specialty: "Coffee", rating: 4.3 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "PBM Hospital" }
+  },
+
+  // --- AJMER & PUSHKAR ---
+  {
+    id: 2220,
+    name: "Ajmer Sharif Dargah",
+    slug: "ajmer-sharif",
+    state: "Ajmer, Rajasthan",
+    category: "Spiritual",
+    badge: "Sufi Shrine",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Ajmer_Sharif_Dargah_Gate.jpg/800px-Ajmer_Sharif_Dargah_Gate.jpg",
+    description: "The tomb of Sufi saint Moinuddin Chishti. It is one of the holiest Muslim shrines in India, visited by millions of people of all faiths.",
+    coordinates: { lat: 26.4561, lng: 74.6282 },
+    essentials: { bestTime: "Winter (Avoid Urs crowd)", weather: "City", timings: "05:00 AM - 09:00 PM", entryFee: { Entry: "Free" } },
+    transport: { nearestAirport: "Kishangarh (30 km)", nearestRailway: "Ajmer Jn (2 km)", busConnectivity: "Auto/Rickshaw" },
+    externalLinks: { officialBooking: "N/A", googleMaps: "https://goo.gl/maps/ajmersharif" },
+    accessibility: { wheelchairFriendly: false, notes: "Crowded narrow lanes." },
+    routePlan: [ { time: "07:00 AM", activity: "Morning Prayers" }, { time: "09:00 AM", activity: "Adhai Din Ka Jhonpra" } ],
+    foodGuide: [ { name: "Mango Masala", type: "Family", specialty: "Vegetarian", rating: 4.2 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "JLN Hospital" }
+  },
   {
     id: 2207,
     name: "Pushkar Lake & Brahma Temple",
     slug: "pushkar-lake",
-    state: "Rajasthan",
+    state: "Pushkar, Rajasthan",
     category: "Spiritual",
-    badge: "Only Brahma Temple in World",
+    badge: "Only Brahma Temple",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Pushkar_Lake_Ghats.jpg/800px-Pushkar_Lake_Ghats.jpg",
-    description: "A sacred town built around a holy lake with 52 ghats. It houses one of the very few temples dedicated to Lord Brahma in the world. Famous for the annual Camel Fair.",
+    description: "A sacred town built around a holy lake with 52 ghats. It houses the only major temple dedicated to Lord Brahma in the world.",
     coordinates: { lat: 26.4886, lng: 74.5509 },
-
-    essentials: {
-      bestTime: "November (Camel Fair) or Winter",
-      weather: "Desert",
-      timings: "24 Hours (Temple: 6 AM - 8 PM)",
-      entryFee: { Entry: "Free" }
-    },
-
-    transport: {
-      nearestAirport: "Kishangarh (45 km)",
-      nearestRailway: "Ajmer Junction (15 km)",
-      busConnectivity: "Frequent buses from Ajmer to Pushkar"
-    },
-
-    externalLinks: {
-      officialBooking: "https://tourism.rajasthan.gov.in/",
-      googleMaps: "https://goo.gl/maps/pushkar"
-    },
-
-    accessibility: {
-      wheelchairFriendly: false,
-      notes: "Ghats have steep steps. Temple entrance has steps but assistance is available."
-    },
-
-    routePlan: [
-      { time: "07:00 AM", activity: "Brahma Temple Darshan" },
-      { time: "09:00 AM", activity: "Walk around 52 Ghats" },
-      { time: "05:00 PM", activity: "Sunset & Aarti at Varaha Ghat" }
-    ],
-
-    foodGuide: [
-      { name: "The Laughing Buddha", type: "Cafe", specialty: "Falafel & Malpua", rating: 4.4 },
-      { name: "Halwai Gali", type: "Street", specialty: "Rabri Malpua", rating: 4.8 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1800-103-3500",
-      nearestHospital: "Govt Hospital Pushkar"
-    }
+    essentials: { bestTime: "Nov (Camel Fair)", weather: "Desert", timings: "24 Hours", entryFee: { Entry: "Free" } },
+    transport: { nearestAirport: "Kishangarh (45 km)", nearestRailway: "Ajmer (15 km)", busConnectivity: "Bus from Ajmer" },
+    externalLinks: { officialBooking: "N/A", googleMaps: "https://goo.gl/maps/pushkar" },
+    accessibility: { wheelchairFriendly: false, notes: "Steps at ghats." },
+    routePlan: [ { time: "05:00 PM", activity: "Sunset Aarti" }, { time: "06:00 PM", activity: "Market Walk" } ],
+    foodGuide: [ { name: "Laughing Buddha", type: "Cafe", specialty: "Falafel", rating: 4.4 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "Govt Hospital" }
   },
+
+  // --- OTHERS (Mount Abu, Ranakpur, Bundi, Alwar) ---
   {
     id: 2208,
-    name: "Mount Abu (Dilwara Temples)",
+    name: "Mount Abu",
     slug: "mount-abu",
-    state: "Rajasthan",
+    state: "Mount Abu, Rajasthan",
     category: "Hill Stations",
-    badge: "Only Hill Station of Rajasthan",
+    badge: "Oasis in Desert",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Nakki_Lake_Mount_Abu.jpg/800px-Nakki_Lake_Mount_Abu.jpg",
-    description: "An oasis in the desert, famous for the Nakki Lake and the exquisite Dilwara Jain Temples, known for their marble carvings that are finer than the Taj Mahal.",
+    description: "The only hill station in Rajasthan, famous for the Nakki Lake and the exquisite Dilwara Jain Temples.",
     coordinates: { lat: 24.5926, lng: 72.7156 },
-
-    essentials: {
-      bestTime: "All Year (Monsoon is scenic)",
-      weather: "Cool",
-      timings: "Temple: 12:00 PM - 05:00 PM (Strict timings)",
-      entryFee: { Entry: "Free (No phones allowed)" }
-    },
-
-    transport: {
-      nearestAirport: "Udaipur (165 km)",
-      nearestRailway: "Abu Road (28 km)",
-      busConnectivity: "Taxis/Buses from Abu Road station"
-    },
-
-    externalLinks: {
-      officialBooking: "https://tourism.rajasthan.gov.in/",
-      googleMaps: "https://goo.gl/maps/mountabu"
-    },
-
-    accessibility: {
-      wheelchairFriendly: true,
-      notes: "Dilwara temples have wheelchair access. Nakki Lake promenade is flat."
-    },
-
-    routePlan: [
-      { time: "10:00 AM", activity: "Nakki Lake Boating" },
-      { time: "12:30 PM", activity: "Dilwara Temples" },
-      { time: "05:30 PM", activity: "Sunset Point" }
-    ],
-
-    foodGuide: [
-      { name: "Mulberry Tree", type: "Restaurant", specialty: "North Indian", rating: 4.2 },
-      { name: "Arbuda", type: "View", specialty: "Gujarati Thali", rating: 4.0 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1800-103-3500",
-      nearestHospital: "Global Hospital"
-    }
+    essentials: { bestTime: "All Year", weather: "Cool", timings: "Temple: 12-5 PM", entryFee: { Entry: "Free" } },
+    transport: { nearestAirport: "Udaipur (165 km)", nearestRailway: "Abu Road (28 km)", busConnectivity: "Taxi from Abu Road" },
+    externalLinks: { officialBooking: "N/A", googleMaps: "https://goo.gl/maps/mountabu" },
+    accessibility: { wheelchairFriendly: true, notes: "Temple has access." },
+    routePlan: [ { time: "10:00 AM", activity: "Nakki Lake" }, { time: "12:30 PM", activity: "Dilwara Temples" } ],
+    foodGuide: [ { name: "Mulberry Tree", type: "Restaurant", specialty: "North Indian", rating: 4.2 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "Global Hospital" }
   },
-
-  // --- FORT ---
+  {
+    id: 2221,
+    name: "Ranakpur Jain Temple",
+    slug: "ranakpur-jain-temple",
+    state: "Ranakpur, Rajasthan",
+    category: "Spiritual",
+    badge: "Marble Marvel",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Ranakpur_Jain_Temple_Interior.jpg/800px-Ranakpur_Jain_Temple_Interior.jpg",
+    description: "One of the most spectacular Jain temples, featuring 1444 uniquely carved marble pillars. No two pillars are the same.",
+    coordinates: { lat: 25.1149, lng: 73.4730 },
+    essentials: { bestTime: "Winter", weather: "Valley", timings: "12:00 PM - 05:00 PM (Tourists)", entryFee: { Entry: "₹200" } },
+    transport: { nearestAirport: "Udaipur (90 km)", nearestRailway: "Falna (35 km)", busConnectivity: "Taxi from Udaipur" },
+    externalLinks: { officialBooking: "N/A", googleMaps: "https://goo.gl/maps/ranakpur" },
+    accessibility: { wheelchairFriendly: false, notes: "Steps involved." },
+    routePlan: [ { time: "12:00 PM", activity: "Temple Architecture Tour" }, { time: "02:00 PM", activity: "Lunch at Resort" } ],
+    foodGuide: [ { name: "King's Abode", type: "Resort", specialty: "Buffet", rating: 4.3 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "Sadri Hospital" }
+  },
+  {
+    id: 2205,
+    name: "Ranthambore National Park",
+    slug: "ranthambore-national-park",
+    state: "Sawai Madhopur, Rajasthan",
+    category: "Wildlife",
+    badge: "Tiger Territory",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Tiger_in_Ranthambhore.jpg/800px-Tiger_in_Ranthambhore.jpg",
+    description: "A former royal hunting ground, famous for its tigers. The park is dotted with ancient ruins, including the massive Ranthambore Fort.",
+    coordinates: { lat: 26.0173, lng: 76.5026 },
+    essentials: { bestTime: "Oct-June", weather: "Forest", timings: "06:30-10:00 AM, 02:30-06:00 PM", entryFee: { Safari: "₹1000-1800" } },
+    transport: { nearestAirport: "Jaipur (180 km)", nearestRailway: "Sawai Madhopur (14 km)", busConnectivity: "Auto from station" },
+    externalLinks: { officialBooking: "https://fmdss.forest.rajasthan.gov.in/", googleMaps: "https://goo.gl/maps/ranthambore" },
+    accessibility: { wheelchairFriendly: false, notes: "Safari vehicles." },
+    routePlan: [ { time: "06:30 AM", activity: "Tiger Safari" }, { time: "11:00 AM", activity: "Ranthambore Fort" } ],
+    foodGuide: [ { name: "Oberoi Vanyavilas", type: "Luxury", specialty: "Fine Dining", rating: 4.8 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "General Hospital" }
+  },
+  {
+    id: 2219,
+    name: "Bhangarh Fort",
+    slug: "bhangarh-fort",
+    state: "Alwar, Rajasthan",
+    category: "Heritage",
+    badge: "Most Haunted Place",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Bhangarh_Fort_Alwar.jpg/800px-Bhangarh_Fort_Alwar.jpg",
+    description: "Known as the most haunted place in India. Entry is strictly prohibited before sunrise and after sunset. The ruins are hauntingly beautiful.",
+    coordinates: { lat: 27.0967, lng: 76.2863 },
+    essentials: { bestTime: "Winter", weather: "Eerie/Hot", timings: "06:00 AM - 06:00 PM", entryFee: { Indian: "₹25", Foreigner: "₹200" } },
+    transport: { nearestAirport: "Jaipur (85 km)", nearestRailway: "Dausa (30 km)", busConnectivity: "Taxi from Jaipur" },
+    externalLinks: { officialBooking: "N/A", googleMaps: "https://goo.gl/maps/bhangarh" },
+    accessibility: { wheelchairFriendly: false, notes: "Ruins and rubble." },
+    routePlan: [ { time: "10:00 AM", activity: "Explore Ruins" }, { time: "12:00 PM", activity: "Gopinath Temple" } ],
+    foodGuide: [ { name: "Local Stalls", type: "Basic", specialty: "Tea/Snacks", rating: 3.5 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "Dausa Hospital" }
+  },
   {
     id: 2209,
     name: "Chittorgarh Fort",
     slug: "chittorgarh-fort",
-    state: "Rajasthan",
+    state: "Chittorgarh, Rajasthan",
     category: "Heritage",
     badge: "Largest Fort in India",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Chittorgarh_Fort_Gaumukh.jpg/800px-Chittorgarh_Fort_Gaumukh.jpg",
-    description: "A UNESCO World Heritage site spreading over 700 acres. It symbolizes Rajput chivalry and sacrifice (Jauhar). Famous for Vijay Stambh (Victory Tower) and Padmini's Palace.",
+    description: "A massive UNESCO site symbolizing Rajput chivalry. Famous for Vijay Stambh, Padmini's Palace, and the legend of Jauhar.",
     coordinates: { lat: 24.8879, lng: 74.6454 },
-
-    essentials: {
-      bestTime: "October to March",
-      weather: "Sunny",
-      timings: "09:30 AM - 05:00 PM",
-      entryFee: {
-        Indian: "₹40",
-        Foreigner: "₹600",
-        LightShow: "₹150"
-      }
-    },
-
-    transport: {
-      nearestAirport: "Udaipur (115 km)",
-      nearestRailway: "Chittorgarh Junction (6 km)",
-      busConnectivity: "Auto/Taxi required to tour the massive fort complex"
-    },
-
-    externalLinks: {
-      officialBooking: "https://asi.payumoney.com/",
-      googleMaps: "https://goo.gl/maps/chittorgarh"
-    },
-
-    accessibility: {
-      wheelchairFriendly: true,
-      notes: "You can drive your vehicle inside the fort to most monuments. Ramps available at Vijay Stambh base."
-    },
-
-    routePlan: [
-      { time: "09:00 AM", activity: "Vijay Stambh & Kirti Stambh" },
-      { time: "11:00 AM", activity: "Rani Padmini's Palace" },
-      { time: "01:00 PM", activity: "Meera Temple" }
-    ],
-
-    foodGuide: [
-      { name: "Chokhi Dhani (Chittor)", type: "Theme", specialty: "Rajasthani Experience", rating: 4.1 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1800-103-3500",
-      nearestHospital: "District Hospital Chittorgarh"
-    }
+    essentials: { bestTime: "Winter", weather: "Sunny", timings: "09:30 AM - 05:00 PM", entryFee: { Indian: "₹40", Foreigner: "₹600" } },
+    transport: { nearestAirport: "Udaipur (115 km)", nearestRailway: "Chittorgarh (6 km)", busConnectivity: "Auto inside fort" },
+    externalLinks: { officialBooking: "https://asi.payumoney.com/", googleMaps: "https://goo.gl/maps/chittorgarh" },
+    accessibility: { wheelchairFriendly: true, notes: "Car drivable inside." },
+    routePlan: [ { time: "09:00 AM", activity: "Vijay Stambh" }, { time: "11:00 AM", activity: "Padmini Palace" } ],
+    foodGuide: [ { name: "Chokhi Dhani", type: "Theme", specialty: "Rajasthani", rating: 4.1 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "District Hospital" }
   },
   {
     id: 2210,
     name: "Kumbhalgarh Fort",
     slug: "kumbhalgarh-fort",
-    state: "Rajasthan",
+    state: "Rajsamand, Rajasthan",
     category: "Heritage",
     badge: "Great Wall of India",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Kumbhalgarh_Fort_Wall.jpg/800px-Kumbhalgarh_Fort_Wall.jpg",
-    description: "Famous for having the second-longest continuous wall in the world (36 km) after the Great Wall of China. It is the birthplace of Maharana Pratap.",
+    description: "Features the second-longest wall in the world (36 km). Birthplace of Maharana Pratap and a fortress that was nearly impregnable.",
     coordinates: { lat: 25.1479, lng: 73.5882 },
-
-    essentials: {
-      bestTime: "October to March",
-      weather: "Cool/Windy",
-      timings: "09:00 AM - 06:00 PM (Light Show: 6:45 PM)",
-      entryFee: {
-        Indian: "₹40",
-        Foreigner: "₹600",
-        LightShow: "₹100"
-      }
-    },
-
-    transport: {
-      nearestAirport: "Udaipur (85 km)",
-      nearestRailway: "Falna (80 km)",
-      busConnectivity: "Best accessed by taxi from Udaipur or Ranakpur"
-    },
-
-    externalLinks: {
-      officialBooking: "https://asi.payumoney.com/",
-      googleMaps: "https://goo.gl/maps/kumbhalgarh"
-    },
-
-    accessibility: {
-      wheelchairFriendly: false,
-      notes: "Very steep ramps and cobblestones. Difficult for wheelchairs to reach the top palace (Badal Mahal)."
-    },
-
-    routePlan: [
-      { time: "03:00 PM", activity: "Climb to Badal Mahal" },
-      { time: "05:00 PM", activity: "Walk on the Wall" },
-      { time: "06:45 PM", activity: "Sound & Light Show" }
-    ],
-
-    foodGuide: [
-      { name: "Kumbhal Palace", type: "Resort", specialty: "Mewari Lunch", rating: 4.3 },
-      { name: "Chowka", type: "Luxury", specialty: "Continental", rating: 4.6 }
-    ],
-
-    emergency: {
-      police: "100",
-      ambulance: "108",
-      touristHelpline: "1800-103-3500",
-      nearestHospital: "Community Health Center Kelwara"
-    }
+    essentials: { bestTime: "Winter", weather: "Windy", timings: "09:00 AM - 06:00 PM", entryFee: { Indian: "₹40", Foreigner: "₹600" } },
+    transport: { nearestAirport: "Udaipur (85 km)", nearestRailway: "Falna (80 km)", busConnectivity: "Taxi from Udaipur" },
+    externalLinks: { officialBooking: "https://asi.payumoney.com/", googleMaps: "https://goo.gl/maps/kumbhalgarh" },
+    accessibility: { wheelchairFriendly: false, notes: "Steep climbs." },
+    routePlan: [ { time: "04:00 PM", activity: "Wall Walk" }, { time: "06:45 PM", activity: "Light Show" } ],
+    foodGuide: [ { name: "Chowka", type: "Luxury", specialty: "Continental", rating: 4.6 } ],
+    emergency: { police: "100", ambulance: "108", touristHelpline: "1800-103-3500", nearestHospital: "Kelwara CHC" }
   }
 ];
